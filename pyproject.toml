@@ -1,0 +1,50 @@
+[project]
+name = "terragrunt-python"
+version = "0.1.0"
+description = "A typed Python wrapper for Terragrunt, OpenTofu, and Terraform executables."
+readme = "README.md"
+requires-python = ">=3.12"
+license = { file = "LICENSE" }
+authors = [{ name = "Terragrunt Python contributors" }]
+dependencies = [
+    "packaging>=25.0",
+]
+
+[dependency-groups]
+dev = [
+    "pytest>=8.0",
+    "pytest-cov>=6.0",
+    "ruff>=0.11",
+    "ty>=0.0.1",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/terragrunt"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "--cov=terragrunt --cov-report=term-missing"
+markers = [
+    "integration: runs commands against locally installed IaC executables",
+]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP", "SIM"]
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+
+[tool.ty.environment]
+python-version = "3.12"
+
+[tool.ty.src]
+include = ["src", "tests"]
