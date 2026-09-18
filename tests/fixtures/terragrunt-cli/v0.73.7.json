@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "tool": "terragrunt",
+  "version": "0.73.7",
+  "commands": [
+    {
+      "path": ["stack"],
+      "aliases": [],
+      "category": "Main commands",
+      "kind": "terragrunt",
+      "summary": "Terragrunt stack commands.",
+      "flags": [],
+      "help_sha256": "fixture-v0.73.7-stack"
+    },
+    {
+      "path": ["hcl", "fmt"],
+      "aliases": [],
+      "category": "Configuration commands",
+      "kind": "terragrunt",
+      "summary": "Format HCL files.",
+      "flags": [],
+      "help_sha256": "fixture-v0.73.7-hcl-fmt"
+    },
+    {
+      "path": ["hclfmt"],
+      "aliases": [],
+      "category": "Configuration commands",
+      "kind": "terragrunt",
+      "summary": "Format HCL files.",
+      "flags": [],
+      "help_sha256": "fixture-v0.73.7-hclfmt"
+    },
+    {
+      "path": ["run-all"],
+      "aliases": [],
+      "category": "Main commands",
+      "kind": "terragrunt",
+      "summary": "Run a command on all modules.",
+      "flags": [],
+      "help_sha256": "fixture-v0.73.7-run-all"
+    }
+  ]
+}

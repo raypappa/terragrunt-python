@@ -228,17 +228,31 @@ uv run python tools/terragrunt_inventory.py 0.73.7 0.90.0 1.0.2
 The default depth of two captures top-level commands and their subcommands.
 Use `--max-depth 1` when only the top-level command set is needed.
 
-Inventories are written to `reference/terragrunt-commands/` as deterministic
+Full inventories are written to ignored `reference/terragrunt-commands/`
 JSON files. Each command includes its canonical path, aliases, summary, and
-the raw version-specific help text. This makes the files useful both for
-reviewing CLI changes and for adding version-aware capability tests.
+raw version-specific help text. Write compact normalized inventories for
+committed fixtures with:
+
+```shell
+uv run python tools/terragrunt_inventory.py 0.73.7 0.90.0 \
+  --compact-output-dir tests/fixtures/terragrunt-cli
+```
+
+Compact fixtures contain stable command paths, aliases, categories, parsed
+flags, and help hashes. Raw help remains generated data and is not committed.
+
+Release notes are downloaded into ignored `reference/terragrunt-releases/`:
+
+```shell
+uv run python tools/download_release_notes.py
+```
 
 Compare two generated inventories:
 
 ```shell
 uv run python tools/terragrunt_inventory.py --compare \
-  reference/terragrunt-commands/v0.90.0.json \
-  reference/terragrunt-commands/v0.93.2.json
+  tests/fixtures/terragrunt-cli/v0.73.7.json \
+  tests/fixtures/terragrunt-cli/v0.90.0.json
 ```
 
 ## Releases

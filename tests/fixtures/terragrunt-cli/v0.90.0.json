@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "tool": "terragrunt",
+  "version": "0.90.0",
+  "commands": [
+    {
+      "path": ["stack"],
+      "aliases": [],
+      "category": "Main commands",
+      "kind": "terragrunt",
+      "summary": "Terragrunt stack commands.",
+      "flags": [],
+      "help_sha256": "fixture-v0.90.0-stack"
+    },
+    {
+      "path": ["hcl", "fmt"],
+      "aliases": ["format"],
+      "category": "Configuration commands",
+      "kind": "terragrunt",
+      "summary": "Format HCL files.",
+      "flags": [
+        {
+          "name": "parallelism",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        }
+      ],
+      "help_sha256": "fixture-v0.90.0-hcl-fmt"
+    },
+    {
+      "path": ["run"],
+      "aliases": [],
+      "category": "Main commands",
+      "kind": "terragrunt",
+      "summary": "Run a command.",
+      "flags": [],
+      "help_sha256": "fixture-v0.90.0-run"
+    }
+  ]
+}
