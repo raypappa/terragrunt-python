@@ -6,6 +6,11 @@ from packaging.version import Version
 from .errors import TerragruntVersionError
 
 MINIMUM_VERSION = Version("0.73.7")
+LATEST_TESTED_VERSION = Version("1.0.2")
+
+
+def _at_least(version: Version, minimum: str) -> bool:
+    return version >= Version(minimum)
 
 
 @dataclass(frozen=True)
@@ -36,18 +41,18 @@ def capabilities_for(version: Version, *, enforce_terragrunt_version: bool = Tru
         raise TerragruntVersionError(
             f"Terragrunt {version} is unsupported; minimum version is {MINIMUM_VERSION}"
         )
-    if version > MINIMUM_VERSION:
+    if version > LATEST_TESTED_VERSION:
         warn(
-            f"Terragrunt {version} is newer than the tested version {MINIMUM_VERSION}",
+            f"Terragrunt {version} is newer than the tested version {LATEST_TESTED_VERSION}",
             RuntimeWarning,
             stacklevel=2,
         )
 
     return Capabilities(
         version=version,
-        supports_render=True,
-        supports_stack_commands=True,
-        supports_list=True,
-        supports_find=True,
-        supports_dag_graph=True,
+        supports_render=_at_least(version, "0.77.17"),
+        supports_stack_commands=_at_least(version, "0.73.7"),
+        supports_list=_at_least(version, "0.76.3"),
+        supports_find=_at_least(version, "0.75.4"),
+        supports_dag_graph=_at_least(version, "0.73.7"),
     )
