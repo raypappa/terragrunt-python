@@ -215,6 +215,32 @@ uv run pytest
 Tests use pytest and mirror the source package under `tests/terragrunt/`.
 Coverage is reported automatically by the pytest configuration.
 
+## Terragrunt Command Inventories
+
+Use the repository tooling to inspect the command tree for exact Terragrunt
+versions. `mise` downloads the requested binary and runs it without changing
+the active project tool configuration:
+
+```shell
+uv run python tools/terragrunt_inventory.py 0.73.7 0.90.0 1.0.2
+```
+
+The default depth of two captures top-level commands and their subcommands.
+Use `--max-depth 1` when only the top-level command set is needed.
+
+Inventories are written to `reference/terragrunt-commands/` as deterministic
+JSON files. Each command includes its canonical path, aliases, summary, and
+the raw version-specific help text. This makes the files useful both for
+reviewing CLI changes and for adding version-aware capability tests.
+
+Compare two generated inventories:
+
+```shell
+uv run python tools/terragrunt_inventory.py --compare \
+  reference/terragrunt-commands/v0.90.0.json \
+  reference/terragrunt-commands/v0.93.2.json
+```
+
 ## Releases
 
 Pushing a tag matching `v*.*.*` runs the checks and publishes the package to

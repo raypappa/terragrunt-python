@@ -27,6 +27,7 @@ packages = ["src/terragrunt"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
+pythonpath = ["."]
 addopts = "--cov=terragrunt --cov-report=term-missing"
 markers = [
     "integration: runs commands against locally installed IaC executables",
