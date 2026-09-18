@@ -104,7 +104,8 @@ terraform.output("-raw", "instance_ip")
 
 The common typed methods are `init`, `plan`, `apply`, `destroy`, `output`, and
 `providers_lock`. Terragrunt-specific methods include `render`, `list`, `find`,
-`stack_run`, and `dag_graph`.
+`stack_run`, `stack_generate`, `stack_output`, `stack_clean`, `exec_command`,
+and `dag_graph`.
 
 ## Output Handling
 

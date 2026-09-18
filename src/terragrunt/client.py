@@ -176,6 +176,66 @@ class TerragruntClient:
             check=check,
         )
 
+    def stack_generate(
+        self,
+        *args: str,
+        output_mode: OutputMode | None = None,
+        timeout: float | None = None,
+        check: bool = True,
+    ) -> CommandResult:
+        self._require("stack_commands")
+        return self.run(
+            "stack",
+            "generate",
+            *args,
+            output_mode=output_mode,
+            timeout=timeout,
+            check=check,
+        )
+
+    def stack_output(
+        self,
+        *args: str,
+        output_mode: OutputMode | None = None,
+        timeout: float | None = None,
+        check: bool = True,
+    ) -> CommandResult:
+        self._require("stack_commands")
+        return self.run(
+            "stack",
+            "output",
+            *args,
+            output_mode=output_mode,
+            timeout=timeout,
+            check=check,
+        )
+
+    def stack_clean(
+        self,
+        *args: str,
+        output_mode: OutputMode | None = None,
+        timeout: float | None = None,
+        check: bool = True,
+    ) -> CommandResult:
+        self._require("stack_commands")
+        return self.run(
+            "stack",
+            "clean",
+            *args,
+            output_mode=output_mode,
+            timeout=timeout,
+            check=check,
+        )
+
+    def exec_command(
+        self,
+        *args: str,
+        output_mode: OutputMode | None = None,
+        timeout: float | None = None,
+        check: bool = True,
+    ) -> CommandResult:
+        return self.run("exec", *args, output_mode=output_mode, timeout=timeout, check=check)
+
     def dag_graph(
         self,
         *args: str,
