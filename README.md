@@ -247,6 +247,19 @@ Release notes are downloaded into ignored `reference/terragrunt-releases/`:
 uv run python tools/download_release_notes.py
 ```
 
+Find release-note candidates for command inventory review:
+
+```shell
+uv run python tools/release_candidates.py \
+  --release-dir reference/terragrunt-releases \
+  --output /tmp/terragrunt-release-candidates.json
+```
+
+The candidate report is deterministic and includes matched keywords, matched
+command names, and the immediately preceding release version. Release notes
+select candidates; exact binary inventories remain the source of truth for
+confirming CLI transitions.
+
 Compare two generated inventories:
 
 ```shell
