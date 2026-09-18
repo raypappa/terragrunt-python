@@ -132,7 +132,7 @@ def test_compare_compact_fixtures() -> None:
     commands = cast(dict[str, object], result["commands"])
     flags = cast(dict[str, object], result["flags"])
 
-    assert commands["added"] == [["run"]]
+    assert commands["added"] == [["find"], ["list"], ["render"], ["run"]]
     assert commands["removed"] == [["hclfmt"], ["run-all"]]
     assert commands["aliases_added"] == [{"path": ["hcl", "fmt"], "aliases": ["format"]}]
     assert flags["added"] == [

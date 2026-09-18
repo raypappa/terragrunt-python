@@ -285,6 +285,12 @@ uv run python tools/terragrunt_transitions.py \
   --output /tmp/terragrunt-transitions.json
 ```
 
+Verify that capability rules agree with committed fixtures:
+
+```shell
+uv run python tools/verify_capabilities.py
+```
+
 ## Releases
 
 Pushing a tag matching `v*.*.*` runs the checks and publishes the package to

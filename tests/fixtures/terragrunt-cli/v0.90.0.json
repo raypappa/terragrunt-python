@@ -4,6 +4,42 @@
   "version": "0.90.0",
   "commands": [
     {
+      "path": ["dag", "graph"],
+      "aliases": [],
+      "category": "Configuration commands",
+      "kind": "terragrunt",
+      "summary": "Graph dependencies.",
+      "flags": [],
+      "help_sha256": "fixture-v0.90.0-dag-graph"
+    },
+    {
+      "path": ["find"],
+      "aliases": [],
+      "category": "Discovery commands",
+      "kind": "terragrunt",
+      "summary": "Find configurations.",
+      "flags": [],
+      "help_sha256": "fixture-v0.90.0-find"
+    },
+    {
+      "path": ["list"],
+      "aliases": ["ls"],
+      "category": "Discovery commands",
+      "kind": "terragrunt",
+      "summary": "List configurations.",
+      "flags": [],
+      "help_sha256": "fixture-v0.90.0-list"
+    },
+    {
+      "path": ["render"],
+      "aliases": [],
+      "category": "Configuration commands",
+      "kind": "terragrunt",
+      "summary": "Render configuration.",
+      "flags": [],
+      "help_sha256": "fixture-v0.90.0-render"
+    },
+    {
       "path": ["stack"],
       "aliases": [],
       "category": "Main commands",
