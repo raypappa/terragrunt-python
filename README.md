@@ -277,6 +277,14 @@ uv run python tools/terragrunt_inventory.py --compare \
   tests/fixtures/terragrunt-cli/v0.90.0.json
 ```
 
+Scan all adjacent compact fixtures and report only releases with changes:
+
+```shell
+uv run python tools/terragrunt_transitions.py \
+  --fixture-dir tests/fixtures/terragrunt-cli \
+  --output /tmp/terragrunt-transitions.json
+```
+
 ## Releases
 
 Pushing a tag matching `v*.*.*` runs the checks and publishes the package to
