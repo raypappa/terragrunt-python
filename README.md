@@ -260,6 +260,15 @@ command names, and the immediately preceding release version. Release notes
 select candidates; exact binary inventories remain the source of truth for
 confirming CLI transitions.
 
+Generate full and compact inventories for candidates and their predecessor
+releases. Existing files are reused unless `--refresh` is supplied:
+
+```shell
+uv run python tools/terragrunt_inventory.py \
+  --candidate-file /tmp/terragrunt-release-candidates.json \
+  --compact-output-dir tests/fixtures/terragrunt-cli
+```
+
 Compare two generated inventories:
 
 ```shell

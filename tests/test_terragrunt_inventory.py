@@ -1,6 +1,13 @@
+from pathlib import Path
 from typing import cast
 
-from tools.terragrunt_inventory import compact_inventory, compare, parse_commands, parse_version
+from tools.terragrunt_inventory import (
+    candidate_versions,
+    compact_inventory,
+    compare,
+    parse_commands,
+    parse_version,
+)
 
 
 def test_parse_version() -> None:
@@ -139,3 +146,13 @@ def test_compare_compact_fixtures() -> None:
             },
         }
     ]
+
+
+def test_candidate_versions_includes_predecessors(tmp_path: Path) -> None:
+    candidates = tmp_path / "candidates.json"
+    candidates.write_text(
+        '[{"version": "0.75.4", "previous_version": "0.75.3"}, '
+        '{"version": "0.90.0", "previous_version": "0.89.4"}]'
+    )
+
+    assert candidate_versions(candidates) == ["0.75.3", "0.75.4", "0.89.4", "0.90.0"]

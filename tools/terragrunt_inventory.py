@@ -10,6 +10,8 @@ from dataclasses import asdict, dataclass
 from pathlib import Path
 from typing import cast
 
+from packaging.version import Version
+
 VERSION_PATTERN = re.compile(r"(?:version\s+)?v?(\d+\.\d+\.\d+)")
 COMMAND_PATTERN = re.compile(r"^\s{3,}([a-z][a-z0-9-]*(?:,\s*[a-z][a-z0-9-]*)*)\s{2,}(.+?)\s*$")
 SECTION_PATTERN = re.compile(
@@ -254,6 +256,17 @@ def write_compact_inventory(version: str, output: Path, max_depth: int = 2) -> N
     )
 
 
+def candidate_versions(path: Path) -> list[str]:
+    candidates = cast(list[dict[str, object]], json.loads(path.read_text(encoding="utf-8")))
+    versions: set[str] = set()
+    for candidate in candidates:
+        versions.add(cast(str, candidate["version"]))
+        previous = candidate.get("previous_version")
+        if previous is not None:
+            versions.add(cast(str, previous))
+    return sorted(versions, key=Version)
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description="Build a Terragrunt CLI command inventory.")
     parser.add_argument("versions", nargs="*", help="Terragrunt versions to inspect")
@@ -275,6 +288,16 @@ def main() -> None:
         help="Also write normalized inventories to this directory",
     )
     parser.add_argument(
+        "--candidate-file",
+        type=Path,
+        help="Generate versions named by a release candidate JSON report",
+    )
+    parser.add_argument(
+        "--refresh",
+        action="store_true",
+        help="Regenerate inventories even when output files already exist",
+    )
+    parser.add_argument(
         "--compare",
         nargs=2,
         type=Path,
@@ -287,18 +310,22 @@ def main() -> None:
         right = json.loads(args.compare[1].read_text(encoding="utf-8"))
         print(json.dumps(compare(left, right), indent=2))
         return
-    if not args.versions:
+    versions = list(args.versions)
+    if args.candidate_file is not None:
+        versions.extend(candidate_versions(args.candidate_file))
+    versions = sorted(set(versions), key=Version)
+    if not versions:
         parser.error("provide at least one version or use --compare")
     if args.max_depth < 1:
         parser.error("--max-depth must be at least 1")
-    for version in args.versions:
-        write_inventory(version, args.output_dir / f"v{version.lstrip('v')}.json", args.max_depth)
+    for version in versions:
+        full_output = args.output_dir / f"v{version.lstrip('v')}.json"
+        if args.refresh or not full_output.exists():
+            write_inventory(version, full_output, args.max_depth)
         if args.compact_output_dir is not None:
-            write_compact_inventory(
-                version,
-                args.compact_output_dir / f"v{version.lstrip('v')}.json",
-                args.max_depth,
-            )
+            compact_output = args.compact_output_dir / f"v{version.lstrip('v')}.json"
+            if args.refresh or not compact_output.exists():
+                write_compact_inventory(version, compact_output, args.max_depth)
 
 
 if __name__ == "__main__":
