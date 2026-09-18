@@ -40,3 +40,6 @@ jobs:
 
       - name: Run tests
         run: uv run pytest
+
+      - name: Verify Terragrunt capabilities
+        run: uv run python tools/verify_capabilities.py
