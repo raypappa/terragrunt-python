@@ -6,7 +6,7 @@ from packaging.version import Version
 from .errors import TerragruntVersionError
 
 MINIMUM_VERSION = Version("0.73.7")
-LATEST_TESTED_VERSION = Version("0.73.9")
+LATEST_TESTED_VERSION = Version("0.74.0")
 
 
 def _at_least(version: Version, minimum: str) -> bool:

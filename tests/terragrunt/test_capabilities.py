@@ -50,7 +50,7 @@ def test_older_version_is_rejected() -> None:
 
 def test_newer_version_warns() -> None:
     with pytest.warns(RuntimeWarning, match=str(LATEST_TESTED_VERSION)):
-        capabilities_for(Version("0.74.0"))
+        capabilities_for(Version("0.74.1"))
 
 
 def test_non_terragrunt_version_does_not_use_terragrunt_gate() -> None:
