@@ -42,6 +42,13 @@ Neither full inventories nor downloaded release notes are committed.
 
 ## Commands
 
+Before running commands that may download Terragrunt releases, configure
+`mise` to authenticate GitHub API requests:
+
+```shell
+export MISE_GITHUB_TOKEN=$(gh auth token)
+```
+
 Download release notes:
 
 ```shell
@@ -74,6 +81,9 @@ uv run python tools/terragrunt_inventory.py \
   --candidate-file /tmp/terragrunt-release-candidates.json \
   --compact-output-dir tests/fixtures/terragrunt-cli
 ```
+
+Candidate-file generation excludes releases before the supported `0.73.7`
+baseline. Explicit versions passed as positional arguments are not filtered.
 
 Existing output files are reused. Use `--refresh` to regenerate them.
 
