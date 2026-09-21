@@ -216,81 +216,13 @@ uv run pytest
 Tests use pytest and mirror the source package under `tests/terragrunt/`.
 Coverage is reported automatically by the pytest configuration.
 
-## Terragrunt Command Inventories
+## Compatibility
 
-Use the repository tooling to inspect the command tree for exact Terragrunt
-versions. `mise` downloads the requested binary and runs it without changing
-the active project tool configuration:
-
-```shell
-uv run python tools/terragrunt_inventory.py 0.73.7 0.90.0 1.0.2
-```
-
-The default depth of two captures top-level commands and their subcommands.
-Use `--max-depth 1` when only the top-level command set is needed.
-
-Full inventories are written to ignored `reference/terragrunt-commands/`
-JSON files. Each command includes its canonical path, aliases, summary, and
-raw version-specific help text. Write compact normalized inventories for
-committed fixtures with:
-
-```shell
-uv run python tools/terragrunt_inventory.py 0.73.7 0.90.0 \
-  --compact-output-dir tests/fixtures/terragrunt-cli
-```
-
-Compact fixtures contain stable command paths, aliases, categories, parsed
-flags, and help hashes. Raw help remains generated data and is not committed.
-
-Release notes are downloaded into ignored `reference/terragrunt-releases/`:
-
-```shell
-uv run python tools/download_release_notes.py
-```
-
-Find release-note candidates for command inventory review:
-
-```shell
-uv run python tools/release_candidates.py \
-  --release-dir reference/terragrunt-releases \
-  --output /tmp/terragrunt-release-candidates.json
-```
-
-The candidate report is deterministic and includes matched keywords, matched
-command names, and the immediately preceding release version. Release notes
-select candidates; exact binary inventories remain the source of truth for
-confirming CLI transitions.
-
-Generate full and compact inventories for candidates and their predecessor
-releases. Existing files are reused unless `--refresh` is supplied:
-
-```shell
-uv run python tools/terragrunt_inventory.py \
-  --candidate-file /tmp/terragrunt-release-candidates.json \
-  --compact-output-dir tests/fixtures/terragrunt-cli
-```
-
-Compare two generated inventories:
-
-```shell
-uv run python tools/terragrunt_inventory.py --compare \
-  tests/fixtures/terragrunt-cli/v0.73.7.json \
-  tests/fixtures/terragrunt-cli/v0.90.0.json
-```
-
-Scan all adjacent compact fixtures and report only releases with changes:
-
-```shell
-uv run python tools/terragrunt_transitions.py \
-  --fixture-dir tests/fixtures/terragrunt-cli \
-  --output /tmp/terragrunt-transitions.json
-```
-
-Verify that capability rules agree with committed fixtures:
-
-```shell
-uv run python tools/verify_capabilities.py
-```
+Terragrunt compatibility is maintained through versioned CLI inventories,
+capability rules, and integration tests. See
+[CONTRIBUTING.md](CONTRIBUTING.md) for the release support workflow and
+[docs/terragrunt-command-inventories.md](docs/terragrunt-command-inventories.md)
+for the inventory tooling reference.
 
 ## Releases
 
