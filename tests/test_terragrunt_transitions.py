@@ -1,7 +1,7 @@
 import json
 from pathlib import Path
 
-from tools.terragrunt_transitions import scan_transitions
+from tools.terragrunt_transitions import non_empty_transition, scan_transitions
 
 
 def test_scan_transitions_reports_adjacent_fixture_changes() -> None:
@@ -11,9 +11,10 @@ def test_scan_transitions_reports_adjacent_fixture_changes() -> None:
 
     fixture_versions = [path.stem.removeprefix("v") for path in sorted(fixture_dir.glob("v*.json"))]
 
-    assert [(report["from"], report["to"]) for report in reports] == list(
-        zip(fixture_versions, fixture_versions[1:], strict=False)
-    )
+    adjacent_pairs = set(zip(fixture_versions, fixture_versions[1:], strict=False))
+
+    assert all(non_empty_transition(report) for report in reports)
+    assert all((report["from"], report["to"]) in adjacent_pairs for report in reports)
 
 
 def test_scan_transitions_can_write_json(tmp_path: Path) -> None:

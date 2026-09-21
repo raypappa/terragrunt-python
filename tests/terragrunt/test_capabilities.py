@@ -29,7 +29,7 @@ def test_next_release_is_supported_without_warning() -> None:
     assert capabilities.supports_stack_commands
     assert not capabilities.supports_dag_graph
     assert capabilities_for(Version("0.90.0")).supports_dag_graph
-    assert not capabilities.supports_find
+    assert capabilities.supports_find
     assert not capabilities.supports_list
     assert not capabilities.supports_render
 
