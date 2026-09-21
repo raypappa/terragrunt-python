@@ -3,6 +3,7 @@ import subprocess
 from pathlib import Path
 
 import pytest
+from packaging.version import Version
 
 from terragrunt import Executable, OutputMode, TerragruntClient
 
@@ -69,6 +70,73 @@ def test_installed_executable_can_initialize_and_plan(
     assert init_result.succeeded
     assert plan_result.succeeded
     assert "No changes" in plan_result.stdout
+
+
+@pytest.fixture
+def terragrunt_client(tmp_path: Path) -> TerragruntClient:
+    path = _installed_executable(Executable.TERRAGRUNT)
+    _write_minimal_configuration(tmp_path, Executable.TERRAGRUNT)
+    return TerragruntClient(
+        executable=path,
+        working_dir=tmp_path,
+        output_mode=OutputMode.CAPTURE,
+        timeout=60,
+    )
+
+
+def _require_capability(client: TerragruntClient, command: str) -> None:
+    if not client.capabilities.supports(command):
+        pytest.skip(f"Terragrunt {client.version} does not support {command}")
+
+
+@pytest.mark.integration
+def test_terragrunt_render(terragrunt_client: TerragruntClient) -> None:
+    _require_capability(terragrunt_client, "render")
+
+    result = terragrunt_client.render("--format", "hcl")
+
+    assert result.succeeded
+    assert "terraform" in result.stdout
+
+
+@pytest.mark.integration
+def test_terragrunt_find(terragrunt_client: TerragruntClient) -> None:
+    _require_capability(terragrunt_client, "find")
+
+    result = terragrunt_client.find("--json")
+
+    assert result.succeeded
+    assert "terragrunt.hcl" in result.stdout
+
+
+@pytest.mark.integration
+def test_terragrunt_list(terragrunt_client: TerragruntClient) -> None:
+    _require_capability(terragrunt_client, "list")
+
+    result = terragrunt_client.list("--json")
+
+    assert result.succeeded
+    assert "terragrunt.hcl" in result.stdout
+
+
+@pytest.mark.integration
+def test_terragrunt_dag_graph(terragrunt_client: TerragruntClient) -> None:
+    _require_capability(terragrunt_client, "dag_graph")
+
+    result = terragrunt_client.dag_graph()
+
+    assert result.succeeded
+
+
+@pytest.mark.integration
+def test_terragrunt_exec_command(terragrunt_client: TerragruntClient) -> None:
+    if terragrunt_client.version < Version("0.80.0"):
+        pytest.skip("exec command is not covered before Terragrunt 0.80.0")
+
+    result = terragrunt_client.exec_command("--", "terragrunt", "--version")
+
+    assert result.succeeded
+    assert str(terragrunt_client.version) in result.stdout + result.stderr
 
 
 def _write_minimal_configuration(directory: Path, executable: Executable) -> None:

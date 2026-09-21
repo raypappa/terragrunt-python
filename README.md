@@ -320,10 +320,11 @@ Terraform is installed locally:
 uv run pytest -m integration
 ```
 
-The integration tests skip executables that are not installed. They use a
-temporary directory with a minimal configuration, disable backend access, and
-only run version, initialization, and no-change plan commands. They do not
-create or modify infrastructure.
+The integration tests skip executables that are not installed. Terragrunt-only
+tests also skip commands unavailable in the installed version. They use
+temporary directories with minimal configurations, disable backend access, and
+do not create or modify infrastructure. The tested Terragrunt command set
+includes rendering, discovery, DAG graph execution, and command forwarding.
 
 ## Project Layout
 
