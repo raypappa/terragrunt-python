@@ -156,3 +156,13 @@ def test_candidate_versions_includes_predecessors(tmp_path: Path) -> None:
     )
 
     assert candidate_versions(candidates) == ["0.75.3", "0.75.4", "0.89.4", "0.90.0"]
+
+
+def test_candidate_versions_excludes_versions_before_supported_baseline(tmp_path: Path) -> None:
+    candidates = tmp_path / "candidates.json"
+    candidates.write_text(
+        '[{"version": "0.73.7", "previous_version": "0.73.6"}, '
+        '{"version": "0.75.4", "previous_version": "0.75.3"}]'
+    )
+
+    assert candidate_versions(candidates) == ["0.73.7", "0.75.3", "0.75.4"]

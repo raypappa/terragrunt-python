@@ -10,9 +10,11 @@ from dataclasses import asdict, dataclass
 from pathlib import Path
 from typing import cast
 
+from loguru import logger
 from packaging.version import Version
 
 VERSION_PATTERN = re.compile(r"(?:version\s+)?v?(\d+\.\d+\.\d+)")
+MINIMUM_SUPPORTED_VERSION = Version("0.73.7")
 COMMAND_PATTERN = re.compile(r"^\s{3,}([a-z][a-z0-9-]*(?:,\s*[a-z][a-z0-9-]*)*)\s{2,}(.+?)\s*$")
 SECTION_PATTERN = re.compile(
     r"^\s*(?:Commands:|OpenTofu shortcuts:|[A-Za-z][A-Za-z ]+ commands:)\s*$"
@@ -40,6 +42,7 @@ class CompactCommand:
 
 def run_mise(version: str, args: Sequence[str]) -> str:
     command = ["mise", "exec", f"terragrunt@{version}", "--", "terragrunt", *args]
+    logger.debug("Running {}", " ".join(command))
     result = subprocess.run(command, capture_output=True, text=True, check=False)
     output = "\n".join(part for part in (result.stdout, result.stderr) if part)
     if result.returncode != 0:
@@ -256,13 +259,17 @@ def write_compact_inventory(version: str, output: Path, max_depth: int = 2) -> N
     )
 
 
-def candidate_versions(path: Path) -> list[str]:
+def candidate_versions(
+    path: Path, *, minimum_version: Version = MINIMUM_SUPPORTED_VERSION
+) -> list[str]:
     candidates = cast(list[dict[str, object]], json.loads(path.read_text(encoding="utf-8")))
     versions: set[str] = set()
     for candidate in candidates:
-        versions.add(cast(str, candidate["version"]))
+        version = cast(str, candidate["version"])
+        if Version(version) >= minimum_version:
+            versions.add(version)
         previous = candidate.get("previous_version")
-        if previous is not None:
+        if previous is not None and Version(cast(str, previous)) >= minimum_version:
             versions.add(cast(str, previous))
     return sorted(versions, key=Version)
 
@@ -318,7 +325,10 @@ def main() -> None:
         parser.error("provide at least one version or use --compare")
     if args.max_depth < 1:
         parser.error("--max-depth must be at least 1")
-    for version in versions:
+    for index, version in enumerate(versions, start=1):
+        logger.info(
+            "Generating Terragrunt inventory for version {} ({}/{})", version, index, len(versions)
+        )
         full_output = args.output_dir / f"v{version.lstrip('v')}.json"
         if args.refresh or not full_output.exists():
             write_inventory(version, full_output, args.max_depth)
@@ -326,6 +336,7 @@ def main() -> None:
             compact_output = args.compact_output_dir / f"v{version.lstrip('v')}.json"
             if args.refresh or not compact_output.exists():
                 write_compact_inventory(version, compact_output, args.max_depth)
+        logger.info("Finished Terragrunt inventory for version {}", version)
 
 
 if __name__ == "__main__":
