@@ -9,9 +9,11 @@ def test_scan_transitions_reports_adjacent_fixture_changes() -> None:
 
     reports = scan_transitions(fixture_dir)
 
-    assert len(reports) == 1
+    assert len(reports) == 2
     assert reports[0]["from"] == "0.73.7"
-    assert reports[0]["to"] == "0.90.0"
+    assert reports[0]["to"] == "0.74.0"
+    assert reports[1]["from"] == "0.74.0"
+    assert reports[1]["to"] == "0.90.0"
 
 
 def test_scan_transitions_can_write_json(tmp_path: Path) -> None:

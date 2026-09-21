@@ -1,0 +1,3919 @@
+{
+  "schema_version": 1,
+  "tool": "terragrunt",
+  "version": "0.74.0",
+  "commands": [
+    {
+      "path": [
+        "catalog"
+      ],
+      "aliases": [],
+      "category": "Catalog commands",
+      "kind": "terragrunt",
+      "summary": "Launch the user interface for searching and managing your module catalog.",
+      "flags": [
+        {
+          "name": "root-file-name",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "no-include-root",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "experiment",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "experiment-mode",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "log-custom-format",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "log-disable",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "log-format",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "log-level",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "log-show-abs-paths",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "no-color",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "non-interactive",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "strict-control",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "strict-mode",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "working-dir",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "help",
+          "short": "-h",
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "version",
+          "short": "-v",
+          "takes_value": false,
+          "value_hint": null
+        }
+      ],
+      "help_sha256": "67bb21cbaf6be1777b84d8ea1b29eeacdbd5ab5aba29cc9deb63dc985df9ce3e"
+    },
+    {
+      "path": [
+        "exec"
+      ],
+      "aliases": [],
+      "category": "Main commands",
+      "kind": "terragrunt",
+      "summary": "Execute an arbitrary command.",
+      "flags": [
+        {
+          "name": "auth-provider-cmd",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "config",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "download-dir",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "iam-assume-role",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "iam-assume-role-duration",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "iam-assume-role-session-name",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "iam-assume-role-web-identity-token",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "in-download-dir",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "inputs-debug",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "experiment",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "experiment-mode",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "log-custom-format",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "log-disable",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "log-format",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "log-level",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "log-show-abs-paths",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "no-color",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "non-interactive",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "strict-control",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "strict-mode",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "working-dir",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "help",
+          "short": "-h",
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "version",
+          "short": "-v",
+          "takes_value": false,
+          "value_hint": null
+        }
+      ],
+      "help_sha256": "244bb3bcfb0e3c48985e5d7a67e3b340bcaeda6bf894831099f66ea53df5f891"
+    },
+    {
+      "path": [
+        "graph"
+      ],
+      "aliases": [],
+      "category": "Main commands",
+      "kind": "terragrunt",
+      "summary": "Execute commands on the full graph of dependent modules for the current module, ensuring correct execution order.",
+      "flags": [
+        {
+          "name": "auth-provider-cmd",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "backend-require-bootstrap",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "config",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "dependency-fetch-output-from-state",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "disable-bucket-update",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "disable-command-validation",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "download-dir",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "engine-cache-path",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "engine-log-level",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "engine-skip-check",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "experimental-engine",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "feature",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "graph-root",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "iam-assume-role",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "iam-assume-role-duration",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "iam-assume-role-session-name",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "iam-assume-role-web-identity-token",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "inputs-debug",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "no-auto-approve",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "no-auto-init",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "no-auto-retry",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "no-destroy-dependencies-check",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "parallelism",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "provider-cache",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "provider-cache-dir",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "provider-cache-hostname",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "provider-cache-port",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "provider-cache-registry-names",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "provider-cache-token",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "queue-exclude-dir",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "queue-exclude-external",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "queue-excludes-file",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "queue-ignore-dag-order",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "queue-ignore-errors",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "queue-include-dir",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "queue-include-external",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "queue-include-units-reading",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "queue-strict-include",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "source",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "source-map",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "source-update",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "tf-forward-stdout",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "tf-path",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "units-that-include",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "use-partial-parse-config-cache",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "experiment",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "experiment-mode",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "log-custom-format",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "log-disable",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "log-format",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "log-level",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "log-show-abs-paths",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "no-color",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "non-interactive",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "strict-control",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "strict-mode",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "working-dir",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "help",
+          "short": "-h",
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "version",
+          "short": "-v",
+          "takes_value": false,
+          "value_hint": null
+        }
+      ],
+      "help_sha256": "f29bed995b584bb02d4d14edb68da124b3197f688db933ee4bacf4beb7bcc3c7"
+    },
+    {
+      "path": [
+        "graph-dependencies"
+      ],
+      "aliases": [],
+      "category": "Configuration commands",
+      "kind": "terragrunt",
+      "summary": "Prints the terragrunt dependency graph to stdout.",
+      "flags": [
+        {
+          "name": "all",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "auth-provider-cmd",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "backend-require-bootstrap",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "config",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "dependency-fetch-output-from-state",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "disable-bucket-update",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "disable-command-validation",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "download-dir",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "engine-cache-path",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "engine-log-level",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "engine-skip-check",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "experimental-engine",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "feature",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "graph",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "graph-root",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "iam-assume-role",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "iam-assume-role-duration",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "iam-assume-role-session-name",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "iam-assume-role-web-identity-token",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "inputs-debug",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "json-out-dir",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "no-auto-approve",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "no-auto-init",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "no-auto-retry",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "no-destroy-dependencies-check",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "out-dir",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "parallelism",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "provider-cache",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "provider-cache-dir",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "provider-cache-hostname",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "provider-cache-port",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "provider-cache-registry-names",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "provider-cache-token",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "queue-exclude-dir",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "queue-exclude-external",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "queue-excludes-file",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "queue-ignore-dag-order",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "queue-ignore-errors",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "queue-include-dir",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "queue-include-external",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "queue-include-units-reading",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "queue-strict-include",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "source",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "source-map",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "source-update",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "tf-forward-stdout",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "tf-path",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "units-that-include",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "use-partial-parse-config-cache",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "experiment",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "experiment-mode",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "log-custom-format",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "log-disable",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "log-format",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "log-level",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "log-show-abs-paths",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "no-color",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "non-interactive",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "strict-control",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "strict-mode",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "working-dir",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "help",
+          "short": "-h",
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "version",
+          "short": "-v",
+          "takes_value": false,
+          "value_hint": null
+        }
+      ],
+      "help_sha256": "db7c12f432c0cda9de102dff8e437a5f3cb25cb84d52c0d00dc5d3706baa7fe8"
+    },
+    {
+      "path": [
+        "hclfmt"
+      ],
+      "aliases": [],
+      "category": "Configuration commands",
+      "kind": "terragrunt",
+      "summary": "Recursively find hcl files and rewrite them into a canonical format.",
+      "flags": [
+        {
+          "name": "all",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "check",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "diff",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "exclude-dir",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "file",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "graph",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "graph-root",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "json-out-dir",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "out-dir",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "stdin",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "experiment",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "experiment-mode",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "log-custom-format",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "log-disable",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "log-format",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "log-level",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "log-show-abs-paths",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "no-color",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "non-interactive",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "strict-control",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "strict-mode",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "working-dir",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "help",
+          "short": "-h",
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "version",
+          "short": "-v",
+          "takes_value": false,
+          "value_hint": null
+        }
+      ],
+      "help_sha256": "aec17162868326f1145a04e80c9cbba5d9184749e91ebbef68a8ba6607ca91a9"
+    },
+    {
+      "path": [
+        "hclvalidate"
+      ],
+      "aliases": [],
+      "category": "Configuration commands",
+      "kind": "terragrunt",
+      "summary": "Find all hcl files from the config stack and validate them.",
+      "flags": [
+        {
+          "name": "json",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "show-config-path",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "experiment",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "experiment-mode",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "log-custom-format",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "log-disable",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "log-format",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "log-level",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "log-show-abs-paths",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "no-color",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "non-interactive",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "strict-control",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "strict-mode",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "working-dir",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "help",
+          "short": "-h",
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "version",
+          "short": "-v",
+          "takes_value": false,
+          "value_hint": null
+        }
+      ],
+      "help_sha256": "00c1805d67675793ef9970045d6bcaee265461b999a229f4c57f0ffda8e58222"
+    },
+    {
+      "path": [
+        "info"
+      ],
+      "aliases": [],
+      "category": "Configuration commands",
+      "kind": "terragrunt",
+      "summary": "List of commands to display Terragrunt settings.",
+      "flags": [
+        {
+          "name": "experiment",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "experiment-mode",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "log-custom-format",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "log-disable",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "log-format",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "log-level",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "log-show-abs-paths",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "no-color",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "non-interactive",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "strict-control",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "strict-mode",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "working-dir",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "help",
+          "short": "-h",
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "version",
+          "short": "-v",
+          "takes_value": false,
+          "value_hint": null
+        }
+      ],
+      "help_sha256": "f059f83a386a2bf20144a5fc170653b516f236de2409adfa700e851470c0c766"
+    },
+    {
+      "path": [
+        "output-module-groups"
+      ],
+      "aliases": [],
+      "category": "Configuration commands",
+      "kind": "terragrunt",
+      "summary": "Output groups of modules ordered by command (apply or destroy) as a list of list in JSON (useful for CI use cases).",
+      "flags": [
+        {
+          "name": "auth-provider-cmd",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "backend-require-bootstrap",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "config",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "dependency-fetch-output-from-state",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "disable-bucket-update",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "disable-command-validation",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "download-dir",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "engine-cache-path",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "engine-log-level",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "engine-skip-check",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "experimental-engine",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "feature",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "iam-assume-role",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "iam-assume-role-duration",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "iam-assume-role-session-name",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "iam-assume-role-web-identity-token",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "inputs-debug",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "no-auto-approve",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "no-auto-init",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "no-auto-retry",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "no-destroy-dependencies-check",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "parallelism",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "provider-cache",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "provider-cache-dir",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "provider-cache-hostname",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "provider-cache-port",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "provider-cache-registry-names",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "provider-cache-token",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "queue-exclude-dir",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "queue-exclude-external",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "queue-excludes-file",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "queue-ignore-dag-order",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "queue-ignore-errors",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "queue-include-dir",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "queue-include-external",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "queue-include-units-reading",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "queue-strict-include",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "source",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "source-map",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "source-update",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "tf-forward-stdout",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "tf-path",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "units-that-include",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "use-partial-parse-config-cache",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "experiment",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "experiment-mode",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "log-custom-format",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "log-disable",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "log-format",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "log-level",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "log-show-abs-paths",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "no-color",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "non-interactive",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "strict-control",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "strict-mode",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "working-dir",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "help",
+          "short": "-h",
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "version",
+          "short": "-v",
+          "takes_value": false,
+          "value_hint": null
+        }
+      ],
+      "help_sha256": "beaffabf6224a7833ded8ef2fb023d252339cca28aad5dfedcbfdc5a7a344772"
+    },
+    {
+      "path": [
+        "render-json"
+      ],
+      "aliases": [],
+      "category": "Configuration commands",
+      "kind": "terragrunt",
+      "summary": "Render the final terragrunt config, with all variables, includes, and functions resolved, as json.",
+      "flags": [
+        {
+          "name": "all",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "auth-provider-cmd",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "backend-require-bootstrap",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "config",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "dependency-fetch-output-from-state",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "disable-bucket-update",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "disable-command-validation",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "disable-dependent-modules",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "download-dir",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "engine-cache-path",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "engine-log-level",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "engine-skip-check",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "experimental-engine",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "feature",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "graph",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "graph-root",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "iam-assume-role",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "iam-assume-role-duration",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "iam-assume-role-session-name",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "iam-assume-role-web-identity-token",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "inputs-debug",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "json-out-dir",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "no-auto-approve",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "no-auto-init",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "no-auto-retry",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "no-destroy-dependencies-check",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "out",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "out-dir",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "parallelism",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "provider-cache",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "provider-cache-dir",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "provider-cache-hostname",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "provider-cache-port",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "provider-cache-registry-names",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "provider-cache-token",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "queue-exclude-dir",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "queue-exclude-external",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "queue-excludes-file",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "queue-ignore-dag-order",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "queue-ignore-errors",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "queue-include-dir",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "queue-include-external",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "queue-include-units-reading",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "queue-strict-include",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "source",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "source-map",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "source-update",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "tf-forward-stdout",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "tf-path",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "units-that-include",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "use-partial-parse-config-cache",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "with-metadata",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "experiment",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "experiment-mode",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "log-custom-format",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "log-disable",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "log-format",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "log-level",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "log-show-abs-paths",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "no-color",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "non-interactive",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "strict-control",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "strict-mode",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "working-dir",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "help",
+          "short": "-h",
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "version",
+          "short": "-v",
+          "takes_value": false,
+          "value_hint": null
+        }
+      ],
+      "help_sha256": "4b784f06738c7018d8dc35efc662f50c0b970340cbac2d8d9eac382bbed8ae9c"
+    },
+    {
+      "path": [
+        "run"
+      ],
+      "aliases": [],
+      "category": "Main commands",
+      "kind": "terragrunt",
+      "summary": "Run an OpenTofu/Terraform command.",
+      "flags": [
+        {
+          "name": "all",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "auth-provider-cmd",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "backend-require-bootstrap",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "config",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "dependency-fetch-output-from-state",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "disable-bucket-update",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "disable-command-validation",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "download-dir",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "engine-cache-path",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "engine-log-level",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "engine-skip-check",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "experimental-engine",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "feature",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "graph",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "graph-root",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "iam-assume-role",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "iam-assume-role-duration",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "iam-assume-role-session-name",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "iam-assume-role-web-identity-token",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "inputs-debug",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "json-out-dir",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "no-auto-approve",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "no-auto-init",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "no-auto-retry",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "no-destroy-dependencies-check",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "out-dir",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "parallelism",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "provider-cache",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "provider-cache-dir",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "provider-cache-hostname",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "provider-cache-port",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "provider-cache-registry-names",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "provider-cache-token",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "queue-exclude-dir",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "queue-exclude-external",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "queue-excludes-file",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "queue-ignore-dag-order",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "queue-ignore-errors",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "queue-include-dir",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "queue-include-external",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "queue-include-units-reading",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "queue-strict-include",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "source",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "source-map",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "source-update",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "tf-forward-stdout",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "tf-path",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "units-that-include",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "use-partial-parse-config-cache",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "experiment",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "experiment-mode",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "log-custom-format",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "log-disable",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "log-format",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "log-level",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "log-show-abs-paths",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "no-color",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "non-interactive",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "strict-control",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "strict-mode",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "working-dir",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "help",
+          "short": "-h",
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "version",
+          "short": "-v",
+          "takes_value": false,
+          "value_hint": null
+        }
+      ],
+      "help_sha256": "1075d59ff336a79c012e07afcad2bdcb87f327d793eb761db45b67e45117d8ed"
+    },
+    {
+      "path": [
+        "run-all"
+      ],
+      "aliases": [],
+      "category": "Main commands",
+      "kind": "terragrunt",
+      "summary": "Run a terraform command against a 'stack' by running the specified command in each subfolder.",
+      "flags": [
+        {
+          "name": "auth-provider-cmd",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "backend-require-bootstrap",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "config",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "dependency-fetch-output-from-state",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "disable-bucket-update",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "disable-command-validation",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "download-dir",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "engine-cache-path",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "engine-log-level",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "engine-skip-check",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "experimental-engine",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "feature",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "iam-assume-role",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "iam-assume-role-duration",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "iam-assume-role-session-name",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "iam-assume-role-web-identity-token",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "inputs-debug",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "json-out-dir",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "no-auto-approve",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "no-auto-init",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "no-auto-retry",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "no-destroy-dependencies-check",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "out-dir",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "parallelism",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "provider-cache",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "provider-cache-dir",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "provider-cache-hostname",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "provider-cache-port",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "provider-cache-registry-names",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "provider-cache-token",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "queue-exclude-dir",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "queue-exclude-external",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "queue-excludes-file",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "queue-ignore-dag-order",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "queue-ignore-errors",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "queue-include-dir",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "queue-include-external",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "queue-include-units-reading",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "queue-strict-include",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "source",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "source-map",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "source-update",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "tf-forward-stdout",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "tf-path",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "units-that-include",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "use-partial-parse-config-cache",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "experiment",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "experiment-mode",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "log-custom-format",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "log-disable",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "log-format",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "log-level",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "log-show-abs-paths",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "no-color",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "non-interactive",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "strict-control",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "strict-mode",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "working-dir",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "help",
+          "short": "-h",
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "version",
+          "short": "-v",
+          "takes_value": false,
+          "value_hint": null
+        }
+      ],
+      "help_sha256": "ffd36c485d5c92ff3b117ec2fda832943769bd6f7083700432b696ab7f8f544d"
+    },
+    {
+      "path": [
+        "scaffold"
+      ],
+      "aliases": [],
+      "category": "Catalog commands",
+      "kind": "terragrunt",
+      "summary": "Scaffold a new Terragrunt module.",
+      "flags": [
+        {
+          "name": "no-include-root",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "output-folder",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "root-file-name",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "var",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "var-file",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "experiment",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "experiment-mode",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "log-custom-format",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "log-disable",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "log-format",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "log-level",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "log-show-abs-paths",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "no-color",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "non-interactive",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "strict-control",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "strict-mode",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "working-dir",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "help",
+          "short": "-h",
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "version",
+          "short": "-v",
+          "takes_value": false,
+          "value_hint": null
+        }
+      ],
+      "help_sha256": "6f763ecf5fc428d2d80ebe24b8f8e00ca5d77960c4f04be566f67649600b4ef2"
+    },
+    {
+      "path": [
+        "stack"
+      ],
+      "aliases": [],
+      "category": "Main commands",
+      "kind": "terragrunt",
+      "summary": "Terragrunt stack commands.",
+      "flags": [
+        {
+          "name": "experiment",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "experiment-mode",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "log-custom-format",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "log-disable",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "log-format",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "log-level",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "log-show-abs-paths",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "no-color",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "non-interactive",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "strict-control",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "strict-mode",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "working-dir",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "help",
+          "short": "-h",
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "version",
+          "short": "-v",
+          "takes_value": false,
+          "value_hint": null
+        }
+      ],
+      "help_sha256": "db39918ace773c79bfd363cd9480a90940bb9a07e46e2c5ed3054ffeefdaa42e"
+    },
+    {
+      "path": [
+        "terragrunt-info"
+      ],
+      "aliases": [],
+      "category": "Configuration commands",
+      "kind": "terragrunt",
+      "summary": "Emits limited terragrunt state on stdout and exits.",
+      "flags": [
+        {
+          "name": "all",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "auth-provider-cmd",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "backend-require-bootstrap",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "config",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "dependency-fetch-output-from-state",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "disable-bucket-update",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "disable-command-validation",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "download-dir",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "engine-cache-path",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "engine-log-level",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "engine-skip-check",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "experimental-engine",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "feature",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "graph",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "graph-root",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "iam-assume-role",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "iam-assume-role-duration",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "iam-assume-role-session-name",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "iam-assume-role-web-identity-token",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "inputs-debug",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "json-out-dir",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "no-auto-approve",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "no-auto-init",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "no-auto-retry",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "no-destroy-dependencies-check",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "out-dir",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "parallelism",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "provider-cache",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "provider-cache-dir",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "provider-cache-hostname",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "provider-cache-port",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "provider-cache-registry-names",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "provider-cache-token",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "queue-exclude-dir",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "queue-exclude-external",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "queue-excludes-file",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "queue-ignore-dag-order",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "queue-ignore-errors",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "queue-include-dir",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "queue-include-external",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "queue-include-units-reading",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "queue-strict-include",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "source",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "source-map",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "source-update",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "tf-forward-stdout",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "tf-path",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "units-that-include",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "use-partial-parse-config-cache",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "experiment",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "experiment-mode",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "log-custom-format",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "log-disable",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "log-format",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "log-level",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "log-show-abs-paths",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "no-color",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "non-interactive",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "strict-control",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "strict-mode",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "working-dir",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "help",
+          "short": "-h",
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "version",
+          "short": "-v",
+          "takes_value": false,
+          "value_hint": null
+        }
+      ],
+      "help_sha256": "5536a7dc698cd20262f484087984cf7dbf0f16834e08899b6e15ba07f7e5dd2b"
+    },
+    {
+      "path": [
+        "validate-inputs"
+      ],
+      "aliases": [],
+      "category": "Configuration commands",
+      "kind": "terragrunt",
+      "summary": "Checks if the terragrunt configured inputs align with the terraform defined variables.",
+      "flags": [
+        {
+          "name": "all",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "auth-provider-cmd",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "backend-require-bootstrap",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "config",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "dependency-fetch-output-from-state",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "disable-bucket-update",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "disable-command-validation",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "download-dir",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "engine-cache-path",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "engine-log-level",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "engine-skip-check",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "experimental-engine",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "feature",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "graph",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "graph-root",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "iam-assume-role",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "iam-assume-role-duration",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "iam-assume-role-session-name",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "iam-assume-role-web-identity-token",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "inputs-debug",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "json-out-dir",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "no-auto-approve",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "no-auto-init",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "no-auto-retry",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "no-destroy-dependencies-check",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "out-dir",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "parallelism",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "provider-cache",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "provider-cache-dir",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "provider-cache-hostname",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "provider-cache-port",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "provider-cache-registry-names",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "provider-cache-token",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "queue-exclude-dir",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "queue-exclude-external",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "queue-excludes-file",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "queue-ignore-dag-order",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "queue-ignore-errors",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "queue-include-dir",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "queue-include-external",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "queue-include-units-reading",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "queue-strict-include",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "source",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "source-map",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "source-update",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "strict-validate",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "tf-forward-stdout",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "tf-path",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "units-that-include",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "use-partial-parse-config-cache",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "experiment",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "experiment-mode",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "log-custom-format",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "log-disable",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "log-format",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "log-level",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "log-show-abs-paths",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "no-color",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "non-interactive",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "strict-control",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "strict-mode",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "working-dir",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "help",
+          "short": "-h",
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "version",
+          "short": "-v",
+          "takes_value": false,
+          "value_hint": null
+        }
+      ],
+      "help_sha256": "fd9b8b89f21c27b3f0601005c3b273afac86877ee901cfe4fb1f9c28380aa33e"
+    }
+  ]
+}

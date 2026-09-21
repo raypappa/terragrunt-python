@@ -6,11 +6,15 @@ from packaging.version import Version
 from .errors import TerragruntVersionError
 
 MINIMUM_VERSION = Version("0.73.7")
-LATEST_TESTED_VERSION = Version("1.0.2")
+LATEST_TESTED_VERSION = Version("0.74.0")
 
 
 def _at_least(version: Version, minimum: str) -> bool:
     return version >= Version(minimum)
+
+
+def _before(version: Version, maximum: str) -> bool:
+    return version < Version(maximum)
 
 
 @dataclass(frozen=True)
@@ -54,5 +58,8 @@ def capabilities_for(version: Version, *, enforce_terragrunt_version: bool = Tru
         supports_stack_commands=_at_least(version, "0.73.7"),
         supports_list=_at_least(version, "0.76.3"),
         supports_find=_at_least(version, "0.75.4"),
-        supports_dag_graph=_at_least(version, "0.73.7"),
+        supports_dag_graph=(
+            _at_least(version, "0.73.7")
+            and (_before(version, "0.74.0") or _at_least(version, "0.90.0"))
+        ),
     )
