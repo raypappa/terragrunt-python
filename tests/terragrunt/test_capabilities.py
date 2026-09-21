@@ -12,12 +12,18 @@ def test_minimum_version_is_supported() -> None:
 
     assert not capabilities.supports_render
     assert capabilities.supports_stack_commands
+    assert capabilities.supports_dag_graph
+
+
+def test_dag_graph_uses_the_legacy_path_only_before_0_73_8() -> None:
+    assert capabilities_for(Version("0.73.7")).supports_dag_graph
+    assert not capabilities_for(Version("0.73.8")).supports_dag_graph
 
 
 def test_next_release_is_supported_without_warning() -> None:
     with catch_warnings(record=True) as warnings:
         simplefilter("always")
-        capabilities = capabilities_for(Version("0.74.0"))
+        capabilities = capabilities_for(LATEST_TESTED_VERSION)
 
     assert not warnings
     assert capabilities.supports_stack_commands
@@ -44,7 +50,7 @@ def test_older_version_is_rejected() -> None:
 
 def test_newer_version_warns() -> None:
     with pytest.warns(RuntimeWarning, match=str(LATEST_TESTED_VERSION)):
-        capabilities_for(Version("0.74.1"))
+        capabilities_for(Version("0.73.9"))
 
 
 def test_non_terragrunt_version_does_not_use_terragrunt_gate() -> None:

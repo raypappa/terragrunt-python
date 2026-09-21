@@ -6,7 +6,7 @@ from packaging.version import Version
 from .errors import TerragruntVersionError
 
 MINIMUM_VERSION = Version("0.73.7")
-LATEST_TESTED_VERSION = Version("0.74.0")
+LATEST_TESTED_VERSION = Version("0.73.8")
 
 
 def _at_least(version: Version, minimum: str) -> bool:
@@ -60,6 +60,6 @@ def capabilities_for(version: Version, *, enforce_terragrunt_version: bool = Tru
         supports_find=_at_least(version, "0.75.4"),
         supports_dag_graph=(
             _at_least(version, "0.73.7")
-            and (_before(version, "0.74.0") or _at_least(version, "0.90.0"))
+            and (_before(version, "0.73.8") or _at_least(version, "0.90.0"))
         ),
     )
