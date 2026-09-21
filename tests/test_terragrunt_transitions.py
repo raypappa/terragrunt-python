@@ -11,7 +11,8 @@ def test_scan_transitions_reports_adjacent_fixture_changes() -> None:
 
     assert [(report["from"], report["to"]) for report in reports] == [
         ("0.73.7", "0.73.8"),
-        ("0.73.8", "0.74.0"),
+        ("0.73.8", "0.73.9"),
+        ("0.73.9", "0.74.0"),
         ("0.74.0", "0.90.0"),
     ]
 
