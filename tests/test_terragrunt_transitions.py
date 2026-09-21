@@ -9,12 +9,11 @@ def test_scan_transitions_reports_adjacent_fixture_changes() -> None:
 
     reports = scan_transitions(fixture_dir)
 
-    assert [(report["from"], report["to"]) for report in reports] == [
-        ("0.73.7", "0.73.8"),
-        ("0.73.8", "0.73.9"),
-        ("0.73.9", "0.74.0"),
-        ("0.74.0", "0.90.0"),
-    ]
+    fixture_versions = [path.stem.removeprefix("v") for path in sorted(fixture_dir.glob("v*.json"))]
+
+    assert [(report["from"], report["to"]) for report in reports] == list(
+        zip(fixture_versions, fixture_versions[1:], strict=False)
+    )
 
 
 def test_scan_transitions_can_write_json(tmp_path: Path) -> None:
