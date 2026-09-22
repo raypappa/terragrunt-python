@@ -10,7 +10,6 @@ from terragrunt.errors import TerragruntVersionError
 def test_minimum_version_is_supported() -> None:
     capabilities = capabilities_for(Version("0.73.7"))
 
-    assert not capabilities.supports_render
     assert capabilities.supports_stack_commands
     assert capabilities.supports_dag_graph
 
@@ -27,11 +26,11 @@ def test_next_release_is_supported_without_warning() -> None:
 
     assert not warnings
     assert capabilities.supports_stack_commands
-    assert not capabilities.supports_dag_graph
+    assert capabilities.supports_dag_graph
     assert capabilities_for(Version("0.90.0")).supports_dag_graph
     assert capabilities.supports_find
     assert capabilities.supports_list
-    assert not capabilities.supports_render
+    assert capabilities.supports_render
 
 
 def test_capabilities_follow_command_introduction_versions() -> None:
