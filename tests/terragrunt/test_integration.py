@@ -93,11 +93,17 @@ def _require_capability(client: TerragruntClient, command: str) -> None:
         pytest.skip(f"Terragrunt {client.version} does not support {command}")
 
 
+def _cli_redesign_args(client: TerragruntClient) -> tuple[str, ...]:
+    if Version("0.77.0") <= client.version < Version("0.78.0"):
+        return ("--experiment", "cli-redesign")
+    return ()
+
+
 @pytest.mark.integration
 def test_terragrunt_render(terragrunt_client: TerragruntClient) -> None:
     _require_capability(terragrunt_client, "render")
 
-    result = terragrunt_client.render("--format", "hcl")
+    result = terragrunt_client.render(*_cli_redesign_args(terragrunt_client), "--format", "hcl")
 
     assert result.succeeded
     assert "terraform" in result.stdout
@@ -107,7 +113,7 @@ def test_terragrunt_render(terragrunt_client: TerragruntClient) -> None:
 def test_terragrunt_find(terragrunt_client: TerragruntClient) -> None:
     _require_capability(terragrunt_client, "find")
 
-    result = terragrunt_client.find("--json")
+    result = terragrunt_client.find(*_cli_redesign_args(terragrunt_client), "--json")
 
     assert result.succeeded
     assert result.stdout.strip()
@@ -117,7 +123,7 @@ def test_terragrunt_find(terragrunt_client: TerragruntClient) -> None:
 def test_terragrunt_list(terragrunt_client: TerragruntClient) -> None:
     _require_capability(terragrunt_client, "list")
 
-    result = terragrunt_client.list()
+    result = terragrunt_client.list(*_cli_redesign_args(terragrunt_client))
 
     assert result.succeeded
     assert result.stdout.strip()
