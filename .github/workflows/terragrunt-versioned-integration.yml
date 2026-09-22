@@ -67,7 +67,9 @@ jobs:
         run: uv sync --locked
       - name: Install OpenTofu
         run: mise install opentofu@1.9.0
+      - name: Install Terraform
+        run: mise install terraform@1.9.0
       - name: Run Terragrunt integration tests
         env:
           TERRAGRUNT_EXPECTED_VERSION: ${{ matrix.version }}
-        run: mise exec opentofu@1.9.0 -- mise exec terragrunt@${{ matrix.version }} -- uv run pytest tests/terragrunt/test_integration.py -m integration
+        run: mise exec opentofu@1.9.0 -- mise exec terraform@1.9.0 -- mise exec terragrunt@${{ matrix.version }} -- uv run pytest tests/terragrunt/test_integration.py -m integration
