@@ -41,6 +41,9 @@ def test_capabilities_follow_command_introduction_versions() -> None:
     assert capabilities_for(Version("0.76.3")).supports_list
     assert not capabilities_for(Version("0.77.16")).supports_render
     assert capabilities_for(Version("0.77.17")).supports_render
+    assert not capabilities_for(Version("0.77.14")).supports_dag_graph
+    assert capabilities_for(Version("0.77.15")).supports_dag_graph
+    assert capabilities_for(Version("0.78.0")).supports_dag_graph
 
 
 def test_older_version_is_rejected() -> None:
