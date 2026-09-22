@@ -1,3 +1,4 @@
+import json
 import os
 import shutil
 import subprocess
@@ -9,6 +10,23 @@ from packaging.version import Version
 from terragrunt import Executable, OutputMode, TerragruntClient
 
 EXECUTABLES = tuple(Executable)
+FIXTURE_DIR = Path(__file__).parents[1] / "fixtures" / "terragrunt-cli"
+
+
+def _fixture_command_versions() -> dict[tuple[str, ...], set[str]]:
+    versions: dict[tuple[str, ...], set[str]] = {}
+    for path in FIXTURE_DIR.glob("v*.json"):
+        data = json.loads(path.read_text(encoding="utf-8"))
+        version = data["version"]
+        for command in data["commands"]:
+            command_path = tuple(command["path"])
+            versions.setdefault(command_path, set()).add(version)
+    return versions
+
+
+COMMANDS_SUPPORTED_BY_MORE_THAN_15_VERSIONS = tuple(
+    sorted(path for path, versions in _fixture_command_versions().items() if len(versions) > 15)
+)
 
 
 def _installed_executable(executable: Executable) -> str:
@@ -99,6 +117,17 @@ def _cli_redesign_args(client: TerragruntClient) -> tuple[str, ...]:
     return ()
 
 
+def _command_fixture_version(client: TerragruntClient) -> str:
+    expected_version = os.environ.get("TERRAGRUNT_EXPECTED_VERSION")
+    return expected_version or str(client.version)
+
+
+def _command_is_present(client: TerragruntClient, path: tuple[str, ...]) -> bool:
+    fixture = FIXTURE_DIR / f"v{_command_fixture_version(client)}.json"
+    data = json.loads(fixture.read_text(encoding="utf-8"))
+    return any(tuple(command["path"]) == path for command in data["commands"])
+
+
 @pytest.mark.integration
 def test_terragrunt_render(terragrunt_client: TerragruntClient) -> None:
     _require_capability(terragrunt_client, "render")
@@ -154,6 +183,27 @@ def test_terragrunt_exec_command(terragrunt_client: TerragruntClient) -> None:
 
     assert result.succeeded
     assert str(terragrunt_client.version) in result.stdout + result.stderr
+
+
+@pytest.mark.integration
+@pytest.mark.parametrize("command_path", COMMANDS_SUPPORTED_BY_MORE_THAN_15_VERSIONS)
+def test_frequently_supported_commands_accept_help(
+    terragrunt_client: TerragruntClient,
+    command_path: tuple[str, ...],
+) -> None:
+    if not _command_is_present(terragrunt_client, command_path):
+        pytest.skip(
+            f"Terragrunt {terragrunt_client.version} does not support {' '.join(command_path)}"
+        )
+
+    result = terragrunt_client.run(
+        *_cli_redesign_args(terragrunt_client),
+        *command_path,
+        "--help",
+    )
+
+    assert result.succeeded
+    assert result.stdout.strip() or result.stderr.strip()
 
 
 def _write_minimal_configuration(directory: Path, executable: Executable) -> None:
