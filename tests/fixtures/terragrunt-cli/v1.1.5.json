@@ -1,0 +1,6589 @@
+{
+  "schema_version": 1,
+  "tool": "terragrunt",
+  "version": "1.1.5",
+  "commands": [
+    {
+      "path": [
+        "backend"
+      ],
+      "aliases": [],
+      "category": "Main commands",
+      "kind": "terragrunt",
+      "summary": "Interact with OpenTofu/Terraform backend infrastructure.",
+      "flags": [
+        {
+          "name": "experiment",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "experiment-mode",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "log-custom-format",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "log-disable",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "log-format",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "log-level",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "log-show-abs-paths",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "no-color",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "no-tip",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "no-tips",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "non-interactive",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "profile-cpu",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "profile-dir",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "profile-goroutine",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "profile-mem",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "strict-control",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "strict-mode",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "working-dir",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "help",
+          "short": "-h",
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "version",
+          "short": "-v",
+          "takes_value": false,
+          "value_hint": null
+        }
+      ],
+      "help_sha256": "8c51345c89fa4ac5dd79bdfe51484df7d005bcfaced4a2fde0eca944a9f8891c"
+    },
+    {
+      "path": [
+        "backend",
+        "bootstrap"
+      ],
+      "aliases": [],
+      "category": "Commands",
+      "kind": "terragrunt",
+      "summary": "Bootstrap OpenTofu/Terraform backend infrastructure.",
+      "flags": [
+        {
+          "name": "all",
+          "short": "-a",
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "backend-bootstrap",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "backend-require-bootstrap",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "config",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "disable-bucket-update",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "download-dir",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "fail-fast",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "feature",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "experiment",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "experiment-mode",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "log-custom-format",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "log-disable",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "log-format",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "log-level",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "log-show-abs-paths",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "no-color",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "no-tip",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "no-tips",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "non-interactive",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "profile-cpu",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "profile-dir",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "profile-goroutine",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "profile-mem",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "strict-control",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "strict-mode",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "working-dir",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "help",
+          "short": "-h",
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "version",
+          "short": "-v",
+          "takes_value": false,
+          "value_hint": null
+        }
+      ],
+      "help_sha256": "54758ef4dfe90a32542f8a2376f53fb6b033aa5e0f9ad6433215453e74145da3"
+    },
+    {
+      "path": [
+        "backend",
+        "delete"
+      ],
+      "aliases": [],
+      "category": "Commands",
+      "kind": "terragrunt",
+      "summary": "Delete OpenTofu/Terraform state.",
+      "flags": [
+        {
+          "name": "all",
+          "short": "-a",
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "backend-bootstrap",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "backend-require-bootstrap",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "config",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "disable-bucket-update",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "download-dir",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "fail-fast",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "feature",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "force",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "experiment",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "experiment-mode",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "log-custom-format",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "log-disable",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "log-format",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "log-level",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "log-show-abs-paths",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "no-color",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "no-tip",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "no-tips",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "non-interactive",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "profile-cpu",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "profile-dir",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "profile-goroutine",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "profile-mem",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "strict-control",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "strict-mode",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "working-dir",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "help",
+          "short": "-h",
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "version",
+          "short": "-v",
+          "takes_value": false,
+          "value_hint": null
+        }
+      ],
+      "help_sha256": "8dc651eadfac25f6106b6663fffcc114eaeaeee70aba41c11d1bbcb734cd1e3c"
+    },
+    {
+      "path": [
+        "backend",
+        "migrate"
+      ],
+      "aliases": [],
+      "category": "Commands",
+      "kind": "terragrunt",
+      "summary": "Migrate OpenTofu/Terraform state from one location to another.",
+      "flags": [
+        {
+          "name": "backend-bootstrap",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "backend-require-bootstrap",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "config",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "disable-bucket-update",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "download-dir",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "feature",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "force",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "experiment",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "experiment-mode",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "log-custom-format",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "log-disable",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "log-format",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "log-level",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "log-show-abs-paths",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "no-color",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "no-tip",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "no-tips",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "non-interactive",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "profile-cpu",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "profile-dir",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "profile-goroutine",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "profile-mem",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "strict-control",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "strict-mode",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "working-dir",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "help",
+          "short": "-h",
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "version",
+          "short": "-v",
+          "takes_value": false,
+          "value_hint": null
+        }
+      ],
+      "help_sha256": "b00ad0cdd32a1246ebe28f64f170ca4a40c6631c6fa6bb5f22c798036a129510"
+    },
+    {
+      "path": [
+        "browse"
+      ],
+      "aliases": [],
+      "category": "Discovery commands",
+      "kind": "terragrunt",
+      "summary": "Browse Terragrunt configurations in an interactive TUI.",
+      "flags": [
+        {
+          "name": "feature",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "no-discovery-auth-provider-cmd",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "experiment",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "experiment-mode",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "log-custom-format",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "log-disable",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "log-format",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "log-level",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "log-show-abs-paths",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "no-color",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "no-tip",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "no-tips",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "non-interactive",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "profile-cpu",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "profile-dir",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "profile-goroutine",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "profile-mem",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "strict-control",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "strict-mode",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "working-dir",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "help",
+          "short": "-h",
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "version",
+          "short": "-v",
+          "takes_value": false,
+          "value_hint": null
+        }
+      ],
+      "help_sha256": "4165c7d43d606249cca0a77826dffdccddedbf1a2476e2114425c42732d1c062"
+    },
+    {
+      "path": [
+        "catalog"
+      ],
+      "aliases": [],
+      "category": "Catalog commands",
+      "kind": "terragrunt",
+      "summary": "Launch the user interface for searching and managing your module catalog.",
+      "flags": [
+        {
+          "name": "cas-clone-depth",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "cas-offline",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "cas-probe-ttl",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "cas-refresh",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "format",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "ignore-file",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "no-cas",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "no-hooks",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "no-include-root",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "no-shell",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "root-file-name",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "experiment",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "experiment-mode",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "log-custom-format",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "log-disable",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "log-format",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "log-level",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "log-show-abs-paths",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "no-color",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "no-tip",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "no-tips",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "non-interactive",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "profile-cpu",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "profile-dir",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "profile-goroutine",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "profile-mem",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "strict-control",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "strict-mode",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "working-dir",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "help",
+          "short": "-h",
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "version",
+          "short": "-v",
+          "takes_value": false,
+          "value_hint": null
+        }
+      ],
+      "help_sha256": "ddfcec21f0f602b019ab2d9b24c43dd9db4324b3266be4ba6aa68d48174587eb"
+    },
+    {
+      "path": [
+        "dag"
+      ],
+      "aliases": [],
+      "category": "Configuration commands",
+      "kind": "terragrunt",
+      "summary": "Interact with the Directed Acyclic Graph (DAG).",
+      "flags": [
+        {
+          "name": "experiment",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "experiment-mode",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "log-custom-format",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "log-disable",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "log-format",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "log-level",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "log-show-abs-paths",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "no-color",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "no-tip",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "no-tips",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "non-interactive",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "profile-cpu",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "profile-dir",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "profile-goroutine",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "profile-mem",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "strict-control",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "strict-mode",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "working-dir",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "help",
+          "short": "-h",
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "version",
+          "short": "-v",
+          "takes_value": false,
+          "value_hint": null
+        }
+      ],
+      "help_sha256": "bc82152c6e173739a45d1dba5fdffefab290e4c98f41e0f25238a5dacfa85107"
+    },
+    {
+      "path": [
+        "dag",
+        "graph"
+      ],
+      "aliases": [],
+      "category": "Commands",
+      "kind": "terragrunt",
+      "summary": "Graph the Directed Acyclic Graph (DAG) in DOT language. Alias for 'list --format=dot --dag --dependencies --external'.",
+      "flags": [
+        {
+          "name": "backend-bootstrap",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "backend-require-bootstrap",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "disable-bucket-update",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "discovery-boundary",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "feature",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "filter",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "filter-affected",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "filter-allow-destroy",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "filters-file",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "no-filters-file",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "queue-ignore-dag-order",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "queue-ignore-errors",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "experiment",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "experiment-mode",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "log-custom-format",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "log-disable",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "log-format",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "log-level",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "log-show-abs-paths",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "no-color",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "no-tip",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "no-tips",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "non-interactive",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "profile-cpu",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "profile-dir",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "profile-goroutine",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "profile-mem",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "strict-control",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "strict-mode",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "working-dir",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "help",
+          "short": "-h",
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "version",
+          "short": "-v",
+          "takes_value": false,
+          "value_hint": null
+        }
+      ],
+      "help_sha256": "c2e41d33ae9e10ae93587ae9b2527763db67d6c48e2e516a8cadb356c56c9958"
+    },
+    {
+      "path": [
+        "exec"
+      ],
+      "aliases": [],
+      "category": "Main commands",
+      "kind": "terragrunt",
+      "summary": "Execute an arbitrary command.",
+      "flags": [
+        {
+          "name": "auth-provider-cmd",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "config",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "download-dir",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "iam-assume-role",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "iam-assume-role-duration",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "iam-assume-role-session-name",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "iam-assume-role-web-identity-token",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "in-download-dir",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "inputs-debug",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "no-auto-init",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "source",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "source-map",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "tf-path",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "experiment",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "experiment-mode",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "log-custom-format",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "log-disable",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "log-format",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "log-level",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "log-show-abs-paths",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "no-color",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "no-tip",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "no-tips",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "non-interactive",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "profile-cpu",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "profile-dir",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "profile-goroutine",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "profile-mem",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "strict-control",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "strict-mode",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "working-dir",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "help",
+          "short": "-h",
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "version",
+          "short": "-v",
+          "takes_value": false,
+          "value_hint": null
+        }
+      ],
+      "help_sha256": "c18cfde7f0a229156f7b106561966fd2026e28aa70b8518d76d41899b124539b"
+    },
+    {
+      "path": [
+        "find"
+      ],
+      "aliases": [
+        "fd"
+      ],
+      "category": "Discovery commands",
+      "kind": "terragrunt",
+      "summary": "Find relevant Terragrunt configurations.",
+      "flags": [
+        {
+          "name": "backend-bootstrap",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "backend-require-bootstrap",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "dag",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "dependencies",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "disable-bucket-update",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "discovery-boundary",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "exclude",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "feature",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "filter",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "filter-affected",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "filter-allow-destroy",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "filters-file",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "format",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "include",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "json",
+          "short": "-j",
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "no-discovery-auth-provider-cmd",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "no-filters-file",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "no-hidden",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "reading",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "experiment",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "experiment-mode",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "log-custom-format",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "log-disable",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "log-format",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "log-level",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "log-show-abs-paths",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "no-color",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "no-tip",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "no-tips",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "non-interactive",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "profile-cpu",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "profile-dir",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "profile-goroutine",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "profile-mem",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "strict-control",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "strict-mode",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "working-dir",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "help",
+          "short": "-h",
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "version",
+          "short": "-v",
+          "takes_value": false,
+          "value_hint": null
+        }
+      ],
+      "help_sha256": "afab3f03ab7861c3ba04421f07ea261c2853c4b4979b9de96d0af26ca587bd2a"
+    },
+    {
+      "path": [
+        "hcl"
+      ],
+      "aliases": [],
+      "category": "Configuration commands",
+      "kind": "terragrunt",
+      "summary": "Interact with HCL files.",
+      "flags": [
+        {
+          "name": "experiment",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "experiment-mode",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "log-custom-format",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "log-disable",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "log-format",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "log-level",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "log-show-abs-paths",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "no-color",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "no-tip",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "no-tips",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "non-interactive",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "profile-cpu",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "profile-dir",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "profile-goroutine",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "profile-mem",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "strict-control",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "strict-mode",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "working-dir",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "help",
+          "short": "-h",
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "version",
+          "short": "-v",
+          "takes_value": false,
+          "value_hint": null
+        }
+      ],
+      "help_sha256": "a4bfbc5a5c7082037220c5ac22de4e772589cc20516a187ffb14c15e33c7a3ff"
+    },
+    {
+      "path": [
+        "hcl",
+        "format"
+      ],
+      "aliases": [
+        "fmt"
+      ],
+      "category": "Commands",
+      "kind": "terragrunt",
+      "summary": "Recursively find HashiCorp Configuration Language (HCL) files and rewrite them into a canonical format.",
+      "flags": [
+        {
+          "name": "check",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "diff",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "discovery-boundary",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "exclude-dir",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "file",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "filter",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "filter-affected",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "filter-allow-destroy",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "filters-file",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "no-filters-file",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "parallelism",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "queue-ignore-dag-order",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "queue-ignore-errors",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "stdin",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "experiment",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "experiment-mode",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "log-custom-format",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "log-disable",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "log-format",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "log-level",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "log-show-abs-paths",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "no-color",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "no-tip",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "no-tips",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "non-interactive",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "profile-cpu",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "profile-dir",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "profile-goroutine",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "profile-mem",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "strict-control",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "strict-mode",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "working-dir",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "help",
+          "short": "-h",
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "version",
+          "short": "-v",
+          "takes_value": false,
+          "value_hint": null
+        }
+      ],
+      "help_sha256": "d87f0dfcb64549035973a084c545d31636c18420b27bb4008c43d648ac0642c2"
+    },
+    {
+      "path": [
+        "hcl",
+        "validate"
+      ],
+      "aliases": [],
+      "category": "Commands",
+      "kind": "terragrunt",
+      "summary": "Recursively find HashiCorp Configuration Language (HCL) files and validate them.",
+      "flags": [
+        {
+          "name": "discovery-boundary",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "filter",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "filter-affected",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "filter-allow-destroy",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "filters-file",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "inputs",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "json",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "no-filters-file",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "queue-ignore-dag-order",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "queue-ignore-errors",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "show-config-path",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "strict",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "--inputs"
+        },
+        {
+          "name": "tf-path",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "experiment",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "experiment-mode",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "log-custom-format",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "log-disable",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "log-format",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "log-level",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "log-show-abs-paths",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "no-color",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "no-tip",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "no-tips",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "non-interactive",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "profile-cpu",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "profile-dir",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "profile-goroutine",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "profile-mem",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "strict-control",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "strict-mode",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "working-dir",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "help",
+          "short": "-h",
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "version",
+          "short": "-v",
+          "takes_value": false,
+          "value_hint": null
+        }
+      ],
+      "help_sha256": "f3eca7076ae2fbc19fce3c55a20e566c4976167c68732aefdb96351cf5ad8ed6"
+    },
+    {
+      "path": [
+        "info"
+      ],
+      "aliases": [],
+      "category": "Configuration commands",
+      "kind": "terragrunt",
+      "summary": "List of commands to display Terragrunt settings.",
+      "flags": [
+        {
+          "name": "experiment",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "experiment-mode",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "log-custom-format",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "log-disable",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "log-format",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "log-level",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "log-show-abs-paths",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "no-color",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "no-tip",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "no-tips",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "non-interactive",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "profile-cpu",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "profile-dir",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "profile-goroutine",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "profile-mem",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "strict-control",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "strict-mode",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "working-dir",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "help",
+          "short": "-h",
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "version",
+          "short": "-v",
+          "takes_value": false,
+          "value_hint": null
+        }
+      ],
+      "help_sha256": "5dad0186feced707dd2514b318091c4a0d4eff864a42f872dd2f8045820885eb"
+    },
+    {
+      "path": [
+        "info",
+        "print"
+      ],
+      "aliases": [],
+      "category": "Commands",
+      "kind": "terragrunt",
+      "summary": "Print out a short description of Terragrunt context.",
+      "flags": [
+        {
+          "name": "all",
+          "short": "-a",
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "auth-provider-cmd",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "backend-bootstrap",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "backend-require-bootstrap",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "cas-clone-depth",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "cas-offline",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "cas-probe-ttl",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "cas-refresh",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "config",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "dependency-fetch-output-from-state",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "destroy-dependencies-check",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "disable-bucket-update",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "discovery-boundary",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "download-dir",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "fail-fast",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "feature",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "filter",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "filter-affected",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "filter-allow-destroy",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "filters-file",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "graph-root",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "iam-assume-role",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "iam-assume-role-duration",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "iam-assume-role-session-name",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "iam-assume-role-web-identity-token",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "inputs-debug",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "json-out-dir",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "no-auto-approve",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "no-auto-init",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "no-auto-provider-cache-dir",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "no-auto-retry",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "no-cas",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "no-dependency-outputs",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "no-discovery-auth-provider-cmd",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "no-filters-file",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "no-hooks",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "no-stack-generate",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "out-dir",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "parallelism",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "provider-cache",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "provider-cache-dir",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "provider-cache-hostname",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "provider-cache-port",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "provider-cache-registry-names",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "provider-cache-token",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "queue-ignore-dag-order",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "queue-ignore-errors",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "report-file",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "report-format",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "report-schema-file",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "source",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "source-map",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "source-update",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "summary-disable",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "summary-per-unit",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "tf-forward-stdout",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "tf-path",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "use-partial-parse-config-cache",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "version-manager-file-name",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "experiment",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "experiment-mode",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "log-custom-format",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "log-disable",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "log-format",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "log-level",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "log-show-abs-paths",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "no-color",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "no-tip",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "no-tips",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "non-interactive",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "profile-cpu",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "profile-dir",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "profile-goroutine",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "profile-mem",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "strict-control",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "strict-mode",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "working-dir",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "help",
+          "short": "-h",
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "version",
+          "short": "-v",
+          "takes_value": false,
+          "value_hint": null
+        }
+      ],
+      "help_sha256": "34d0db5238433af848859f98902834348395033aac9ab90fc6211704967de0f8"
+    },
+    {
+      "path": [
+        "info",
+        "strict"
+      ],
+      "aliases": [],
+      "category": "Commands",
+      "kind": "terragrunt",
+      "summary": "Command associated with strict control settings.",
+      "flags": [
+        {
+          "name": "experiment",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "experiment-mode",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "log-custom-format",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "log-disable",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "log-format",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "log-level",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "log-show-abs-paths",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "no-color",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "no-tip",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "no-tips",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "non-interactive",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "profile-cpu",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "profile-dir",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "profile-goroutine",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "profile-mem",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "strict-control",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "strict-mode",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "working-dir",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "help",
+          "short": "-h",
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "version",
+          "short": "-v",
+          "takes_value": false,
+          "value_hint": null
+        }
+      ],
+      "help_sha256": "b91e370d442eacc70a5bb6beef6bc55e371e5be88287168626e5881eb6368c43"
+    },
+    {
+      "path": [
+        "list"
+      ],
+      "aliases": [
+        "ls"
+      ],
+      "category": "Discovery commands",
+      "kind": "terragrunt",
+      "summary": "List relevant Terragrunt configurations.",
+      "flags": [
+        {
+          "name": "backend-bootstrap",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "backend-require-bootstrap",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "dag",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "dependencies",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "disable-bucket-update",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "discovery-boundary",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "feature",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "filter",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "filter-affected",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "filter-allow-destroy",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "filters-file",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "format",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "long",
+          "short": "-l",
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "no-discovery-auth-provider-cmd",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "no-filters-file",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "no-hidden",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "experiment",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "experiment-mode",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "log-custom-format",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "log-disable",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "log-format",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "log-level",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "log-show-abs-paths",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "no-color",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "no-tip",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "no-tips",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "non-interactive",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "profile-cpu",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "profile-dir",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "profile-goroutine",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "profile-mem",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "strict-control",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "strict-mode",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "working-dir",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "help",
+          "short": "-h",
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "version",
+          "short": "-v",
+          "takes_value": false,
+          "value_hint": null
+        }
+      ],
+      "help_sha256": "4a26cdb96886b966421298b704d6fec88d14fe61bd937bd3017755eedb73a549"
+    },
+    {
+      "path": [
+        "render"
+      ],
+      "aliases": [],
+      "category": "Configuration commands",
+      "kind": "terragrunt",
+      "summary": "Render the final terragrunt config, with all variables, includes, and functions resolved, in the specified format.",
+      "flags": [
+        {
+          "name": "all",
+          "short": "-a",
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "auth-provider-cmd",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "backend-bootstrap",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "backend-require-bootstrap",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "cas-clone-depth",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "cas-offline",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "cas-probe-ttl",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "cas-refresh",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "config",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "dependency-fetch-output-from-state",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "destroy-dependencies-check",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "disable-bucket-update",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "discovery-boundary",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "download-dir",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "fail-fast",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "feature",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "filter",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "filter-affected",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "filter-allow-destroy",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "filters-file",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "format",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "graph-root",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "iam-assume-role",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "iam-assume-role-duration",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "iam-assume-role-session-name",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "iam-assume-role-web-identity-token",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "inputs-debug",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "json",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "json-out-dir",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "no-auto-approve",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "no-auto-init",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "no-auto-provider-cache-dir",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "no-auto-retry",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "no-cas",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "no-dependency-outputs",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "no-discovery-auth-provider-cmd",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "no-filters-file",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "no-hooks",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "no-stack-generate",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "out",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "out-dir",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "parallelism",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "provider-cache",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "provider-cache-dir",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "provider-cache-hostname",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "provider-cache-port",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "provider-cache-registry-names",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "provider-cache-token",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "queue-ignore-dag-order",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "queue-ignore-errors",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "report-file",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "report-format",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "report-schema-file",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "source",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "source-map",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "source-update",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "summary-disable",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "summary-per-unit",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "tf-forward-stdout",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "tf-path",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "use-partial-parse-config-cache",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "version-manager-file-name",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "with-metadata",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "write",
+          "short": "-w",
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "experiment",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "experiment-mode",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "log-custom-format",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "log-disable",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "log-format",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "log-level",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "log-show-abs-paths",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "no-color",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "no-tip",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "no-tips",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "non-interactive",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "profile-cpu",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "profile-dir",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "profile-goroutine",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "profile-mem",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "strict-control",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "strict-mode",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "working-dir",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "help",
+          "short": "-h",
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "version",
+          "short": "-v",
+          "takes_value": false,
+          "value_hint": null
+        }
+      ],
+      "help_sha256": "7b32b30a29c5f670f2188f4cf63ddef70602ff44328d410225bab9b8505597af"
+    },
+    {
+      "path": [
+        "run"
+      ],
+      "aliases": [],
+      "category": "Main commands",
+      "kind": "terragrunt",
+      "summary": "Run an OpenTofu/Terraform command.",
+      "flags": [
+        {
+          "name": "all",
+          "short": "-a",
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "auth-provider-cmd",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "backend-bootstrap",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "backend-require-bootstrap",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "cas-clone-depth",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "cas-offline",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "cas-probe-ttl",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "cas-refresh",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "config",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "dependency-fetch-output-from-state",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "destroy-dependencies-check",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "disable-bucket-update",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "discovery-boundary",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "download-dir",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "fail-fast",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "feature",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "filter",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "filter-affected",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "filter-allow-destroy",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "filters-file",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "graph",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "graph-root",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "iam-assume-role",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "iam-assume-role-duration",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "iam-assume-role-session-name",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "iam-assume-role-web-identity-token",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "inputs-debug",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "json-out-dir",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "no-auto-approve",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "no-auto-init",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "no-auto-provider-cache-dir",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "no-auto-retry",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "no-cas",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "no-dependency-outputs",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "no-discovery-auth-provider-cmd",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "no-filters-file",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "no-hooks",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "no-stack-generate",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "out-dir",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "parallelism",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "provider-cache",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "provider-cache-dir",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "provider-cache-hostname",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "provider-cache-port",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "provider-cache-registry-names",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "provider-cache-token",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "queue-ignore-dag-order",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "queue-ignore-errors",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "report-file",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "report-format",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "report-schema-file",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "source",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "source-map",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "source-update",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "summary-disable",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "summary-per-unit",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "tf-forward-stdout",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "tf-path",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "use-partial-parse-config-cache",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "version-manager-file-name",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "experiment",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "experiment-mode",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "log-custom-format",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "log-disable",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "log-format",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "log-level",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "log-show-abs-paths",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "no-color",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "no-tip",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "no-tips",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "non-interactive",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "profile-cpu",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "profile-dir",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "profile-goroutine",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "profile-mem",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "strict-control",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "strict-mode",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "working-dir",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "help",
+          "short": "-h",
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "version",
+          "short": "-v",
+          "takes_value": false,
+          "value_hint": null
+        }
+      ],
+      "help_sha256": "47ef89e25572fe137e3f34cd563052e66e62d3b2ca9d76b67fe6717cf8ac49a0"
+    },
+    {
+      "path": [
+        "run",
+        "apply"
+      ],
+      "aliases": [],
+      "category": "Commands",
+      "kind": "terragrunt",
+      "summary": "Create or update infrastructure.",
+      "flags": [],
+      "help_sha256": "c22ca84976b22dee55ed51d1350248dc8591127ffc4da88be9d9becd7e521ac0"
+    },
+    {
+      "path": [
+        "run",
+        "console"
+      ],
+      "aliases": [],
+      "category": "Commands",
+      "kind": "terragrunt",
+      "summary": "Try OpenTofu/Terraform expressions at an interactive command prompt.",
+      "flags": [],
+      "help_sha256": "fd610819b274be108ebf1183e43681d9ea22c7d4fd6a33e1694f20e8386e9de1"
+    },
+    {
+      "path": [
+        "run",
+        "destroy"
+      ],
+      "aliases": [],
+      "category": "Commands",
+      "kind": "terragrunt",
+      "summary": "Destroy previously-created infrastructure.",
+      "flags": [],
+      "help_sha256": "b1cf3e2754d5c541bbfbf61ebcb4cb30598e642ac169ba6a0ee9a839ceb0d135"
+    },
+    {
+      "path": [
+        "run",
+        "fmt"
+      ],
+      "aliases": [],
+      "category": "Commands",
+      "kind": "terragrunt",
+      "summary": "Reformat your configuration in the standard style.",
+      "flags": [],
+      "help_sha256": "27943590243cc695de492b53243460acccbd92f3418068fa8c48421cdc5bc2aa"
+    },
+    {
+      "path": [
+        "run",
+        "force-unlock"
+      ],
+      "aliases": [],
+      "category": "Commands",
+      "kind": "terragrunt",
+      "summary": "Release a stuck lock on the current workspace.",
+      "flags": [],
+      "help_sha256": "c465cf7f32e92c08d20ee8b16f7a6e2ea40c8fd2ddb5350a6f418891665fa047"
+    },
+    {
+      "path": [
+        "run",
+        "get"
+      ],
+      "aliases": [],
+      "category": "Commands",
+      "kind": "terragrunt",
+      "summary": "Install or upgrade remote OpenTofu/Terraform modules.",
+      "flags": [],
+      "help_sha256": "c1fc1b3176a0a2b3735bc6f873786d5284fd4047f2cc994fb098035876b408aa"
+    },
+    {
+      "path": [
+        "run",
+        "graph"
+      ],
+      "aliases": [],
+      "category": "Commands",
+      "kind": "terragrunt",
+      "summary": "Generate a Graphviz graph of the steps in an operation.",
+      "flags": [],
+      "help_sha256": "d4c6e1660d589a632124523bd60ba80b67d006a428a71ab587e1bb2d621b3b2b"
+    },
+    {
+      "path": [
+        "run",
+        "import"
+      ],
+      "aliases": [],
+      "category": "Commands",
+      "kind": "terragrunt",
+      "summary": "Associate existing infrastructure with a OpenTofu/Terraform resource.",
+      "flags": [],
+      "help_sha256": "9d2a636684d8e6c8df2d95eeb45e7012ccaa17aef88132bffe9f1c3b9c861a39"
+    },
+    {
+      "path": [
+        "run",
+        "init"
+      ],
+      "aliases": [],
+      "category": "Commands",
+      "kind": "terragrunt",
+      "summary": "Prepare your working directory for other commands.",
+      "flags": [],
+      "help_sha256": "23537b3c3fbc202809e2127d661f2c1ff9b1b4c17b2c4df3dc5793f92c16e79e"
+    },
+    {
+      "path": [
+        "run",
+        "login"
+      ],
+      "aliases": [],
+      "category": "Commands",
+      "kind": "terragrunt",
+      "summary": "Obtain and save credentials for a remote host.",
+      "flags": [],
+      "help_sha256": "f81653c3e63d3f6426578236c555b4d6575ca9c0f888d2aaaf6163e04c2ef41a"
+    },
+    {
+      "path": [
+        "run",
+        "logout"
+      ],
+      "aliases": [],
+      "category": "Commands",
+      "kind": "terragrunt",
+      "summary": "Remove locally-stored credentials for a remote host.",
+      "flags": [],
+      "help_sha256": "e8afc22bea81473bf1cf69570be4a65d0141b37f10b0b4b6ace74b0c50b2b3ec"
+    },
+    {
+      "path": [
+        "run",
+        "metadata"
+      ],
+      "aliases": [],
+      "category": "Commands",
+      "kind": "terragrunt",
+      "summary": "Metadata related commands.",
+      "flags": [],
+      "help_sha256": "e56912fbf57712994cc2ed343690830f35639b7610a1b9ed53d102103891b3b3"
+    },
+    {
+      "path": [
+        "run",
+        "output"
+      ],
+      "aliases": [],
+      "category": "Commands",
+      "kind": "terragrunt",
+      "summary": "Show output values from your root module.",
+      "flags": [],
+      "help_sha256": "327e16162f811b255d35c258efe036278e971715d5501ec0e5256228b65c7736"
+    },
+    {
+      "path": [
+        "run",
+        "plan"
+      ],
+      "aliases": [],
+      "category": "Commands",
+      "kind": "terragrunt",
+      "summary": "Show changes required by the current configuration.",
+      "flags": [],
+      "help_sha256": "4fd62ed4263bc670b77a9be26f3082fb0dfdd9605619459a94023ece9e170225"
+    },
+    {
+      "path": [
+        "run",
+        "providers"
+      ],
+      "aliases": [],
+      "category": "Commands",
+      "kind": "terragrunt",
+      "summary": "Show the providers required for this configuration.",
+      "flags": [],
+      "help_sha256": "228faf72c0ccfa393e94a00049222a8cb5c95bd847e7d89081276d0dca5c3476"
+    },
+    {
+      "path": [
+        "run",
+        "refresh"
+      ],
+      "aliases": [],
+      "category": "Commands",
+      "kind": "terragrunt",
+      "summary": "Update the state to match remote systems.",
+      "flags": [],
+      "help_sha256": "7162e7a826d0fb4dd50039cb0e1ee3f2faeba664d2fb12bf9011055b5e5bdf76"
+    },
+    {
+      "path": [
+        "run",
+        "show"
+      ],
+      "aliases": [],
+      "category": "Commands",
+      "kind": "terragrunt",
+      "summary": "Show the current state or a saved plan.",
+      "flags": [],
+      "help_sha256": "bd5926ea82ef061ec2d8ea48eda9786a145618b854bb3b7366c47033425fb419"
+    },
+    {
+      "path": [
+        "run",
+        "state"
+      ],
+      "aliases": [],
+      "category": "Commands",
+      "kind": "terragrunt",
+      "summary": "Advanced state management.",
+      "flags": [],
+      "help_sha256": "6de60717414bf01d7d9c4c196b9f605bef3ca6e33d441c1b161802b45248af9d"
+    },
+    {
+      "path": [
+        "run",
+        "taint"
+      ],
+      "aliases": [],
+      "category": "Commands",
+      "kind": "terragrunt",
+      "summary": "Mark a resource instance as not fully functional.",
+      "flags": [],
+      "help_sha256": "e2a908f4d8a481728019eaf8ed36fd6c7ee7872caae8e5371bbec9f82a33d1f4"
+    },
+    {
+      "path": [
+        "run",
+        "test"
+      ],
+      "aliases": [],
+      "category": "Commands",
+      "kind": "terragrunt",
+      "summary": "Execute integration tests for OpenTofu/Terraform modules.",
+      "flags": [],
+      "help_sha256": "f09e30afdd285f9fc2bbabd872fa2b8cd7ba08333d284cc37e2e38027388d605"
+    },
+    {
+      "path": [
+        "run",
+        "untaint"
+      ],
+      "aliases": [],
+      "category": "Commands",
+      "kind": "terragrunt",
+      "summary": "Remove the 'tainted' state from a resource instance.",
+      "flags": [],
+      "help_sha256": "f8fcb3e8cd4f811fc7fa3b5dcd02f606f77b309be85a175d919a3617f8b81180"
+    },
+    {
+      "path": [
+        "run",
+        "validate"
+      ],
+      "aliases": [],
+      "category": "Commands",
+      "kind": "terragrunt",
+      "summary": "Check whether the configuration is valid.",
+      "flags": [],
+      "help_sha256": "c049ea2967383a3e997fb4cdd9f903df2770a68b505a94fb9aa6487557754fc0"
+    },
+    {
+      "path": [
+        "run",
+        "version"
+      ],
+      "aliases": [],
+      "category": "Commands",
+      "kind": "terragrunt",
+      "summary": "Show the current OpenTofu/Terraform version.",
+      "flags": [],
+      "help_sha256": "906c5f3851b5719cf5a5b2aee6df01a2e77bb5e136755eaf0bc8e6879f890383"
+    },
+    {
+      "path": [
+        "run",
+        "workspace"
+      ],
+      "aliases": [],
+      "category": "Commands",
+      "kind": "terragrunt",
+      "summary": "Workspace management.",
+      "flags": [],
+      "help_sha256": "3b3f59905498c9a30c06541afefc00b117d678e94360f4ee34fc0eeaf98f5508"
+    },
+    {
+      "path": [
+        "scaffold"
+      ],
+      "aliases": [],
+      "category": "Catalog commands",
+      "kind": "terragrunt",
+      "summary": "Scaffold a new Terragrunt module.",
+      "flags": [
+        {
+          "name": "backend-bootstrap",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "backend-require-bootstrap",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "disable-bucket-update",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "feature",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "no-dependency-prompt",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "no-hooks",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "no-include-root",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "no-shell",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "output-folder",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "root-file-name",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "var",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "var-file",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "experiment",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "experiment-mode",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "log-custom-format",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "log-disable",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "log-format",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "log-level",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "log-show-abs-paths",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "no-color",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "no-tip",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "no-tips",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "non-interactive",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "profile-cpu",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "profile-dir",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "profile-goroutine",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "profile-mem",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "strict-control",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "strict-mode",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "working-dir",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "help",
+          "short": "-h",
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "version",
+          "short": "-v",
+          "takes_value": false,
+          "value_hint": null
+        }
+      ],
+      "help_sha256": "f7e173f2d1ce7f8f6c7b78cd81a371b3cbf0be7baef61e8ec830c1df14cac50f"
+    },
+    {
+      "path": [
+        "stack"
+      ],
+      "aliases": [],
+      "category": "Main commands",
+      "kind": "terragrunt",
+      "summary": "Terragrunt stack commands.",
+      "flags": [
+        {
+          "name": "experiment",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "experiment-mode",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "log-custom-format",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "log-disable",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "log-format",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "log-level",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "log-show-abs-paths",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "no-color",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "no-tip",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "no-tips",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "non-interactive",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "profile-cpu",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "profile-dir",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "profile-goroutine",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "profile-mem",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "strict-control",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "strict-mode",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "working-dir",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "help",
+          "short": "-h",
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "version",
+          "short": "-v",
+          "takes_value": false,
+          "value_hint": null
+        }
+      ],
+      "help_sha256": "616d034f9ddbcc6c6d64f97f2f7546fea436e35789f2985a6a722ccb74ae8cff"
+    },
+    {
+      "path": [
+        "stack",
+        "clean"
+      ],
+      "aliases": [],
+      "category": "Commands",
+      "kind": "terragrunt",
+      "summary": "Clean the stack generated from the current directory",
+      "flags": [
+        {
+          "name": "experiment",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "experiment-mode",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "log-custom-format",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "log-disable",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "log-format",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "log-level",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "log-show-abs-paths",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "no-color",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "no-tip",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "no-tips",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "non-interactive",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "profile-cpu",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "profile-dir",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "profile-goroutine",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "profile-mem",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "strict-control",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "strict-mode",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "working-dir",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "help",
+          "short": "-h",
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "version",
+          "short": "-v",
+          "takes_value": false,
+          "value_hint": null
+        }
+      ],
+      "help_sha256": "a7bc75bd08a8788cab5fdc639d5882f3bcb34919bc2b4721cd24933246ee718c"
+    },
+    {
+      "path": [
+        "stack",
+        "generate"
+      ],
+      "aliases": [],
+      "category": "Commands",
+      "kind": "terragrunt",
+      "summary": "Generate a stack from a terragrunt.stack.hcl file",
+      "flags": [
+        {
+          "name": "auth-provider-cmd",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "backend-bootstrap",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "backend-require-bootstrap",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "cas-clone-depth",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "cas-offline",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "cas-probe-ttl",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "cas-refresh",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "config",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "dependency-fetch-output-from-state",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "destroy-dependencies-check",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "disable-bucket-update",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "discovery-boundary",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "download-dir",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "fail-fast",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "feature",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "filter",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "filter-affected",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "filter-allow-destroy",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "filters-file",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "graph-root",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "iam-assume-role",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "iam-assume-role-duration",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "iam-assume-role-session-name",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "iam-assume-role-web-identity-token",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "inputs-debug",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "json-out-dir",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "no-auto-approve",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "no-auto-init",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "no-auto-provider-cache-dir",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "no-auto-retry",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "no-cas",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "no-dependency-outputs",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "no-discovery-auth-provider-cmd",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "no-filters-file",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "no-hooks",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "no-stack-generate",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "out-dir",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "parallelism",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "provider-cache",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "provider-cache-dir",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "provider-cache-hostname",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "provider-cache-port",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "provider-cache-registry-names",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "provider-cache-token",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "queue-ignore-dag-order",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "queue-ignore-errors",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "report-file",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "report-format",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "report-schema-file",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "source",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "source-map",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "source-update",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "summary-disable",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "summary-per-unit",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "tf-forward-stdout",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "tf-path",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "use-partial-parse-config-cache",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "version-manager-file-name",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "experiment",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "experiment-mode",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "log-custom-format",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "log-disable",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "log-format",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "log-level",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "log-show-abs-paths",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "no-color",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "no-tip",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "no-tips",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "non-interactive",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "profile-cpu",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "profile-dir",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "profile-goroutine",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "profile-mem",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "strict-control",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "strict-mode",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "working-dir",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "help",
+          "short": "-h",
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "version",
+          "short": "-v",
+          "takes_value": false,
+          "value_hint": null
+        }
+      ],
+      "help_sha256": "b4f111f0fb13dc46b4501c46455faa12add8b4369caa1bed4f5f097b17bd66a2"
+    },
+    {
+      "path": [
+        "stack",
+        "output"
+      ],
+      "aliases": [],
+      "category": "Commands",
+      "kind": "terragrunt",
+      "summary": "Run fetch stack output",
+      "flags": [
+        {
+          "name": "auth-provider-cmd",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "backend-bootstrap",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "backend-require-bootstrap",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "cas-clone-depth",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "cas-offline",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "cas-probe-ttl",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "cas-refresh",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "config",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "dependency-fetch-output-from-state",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "destroy-dependencies-check",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "disable-bucket-update",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "discovery-boundary",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "download-dir",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "fail-fast",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "feature",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "filter",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "filter-affected",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "filter-allow-destroy",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "filters-file",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "format",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "graph-root",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "iam-assume-role",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "iam-assume-role-duration",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "iam-assume-role-session-name",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "iam-assume-role-web-identity-token",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "inputs-debug",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "json",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "json-out-dir",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "no-auto-approve",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "no-auto-init",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "no-auto-provider-cache-dir",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "no-auto-retry",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "no-cas",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "no-dependency-outputs",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "no-discovery-auth-provider-cmd",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "no-filters-file",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "no-hooks",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "no-stack-generate",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "out-dir",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "parallelism",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "provider-cache",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "provider-cache-dir",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "provider-cache-hostname",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "provider-cache-port",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "provider-cache-registry-names",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "provider-cache-token",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "queue-ignore-dag-order",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "queue-ignore-errors",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "raw",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "report-file",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "report-format",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "report-schema-file",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "source",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "source-map",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "source-update",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "summary-disable",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "summary-per-unit",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "tf-forward-stdout",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "tf-path",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "use-partial-parse-config-cache",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "version-manager-file-name",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "experiment",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "experiment-mode",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "log-custom-format",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "log-disable",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "log-format",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "log-level",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "log-show-abs-paths",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "no-color",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "no-tip",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "no-tips",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "non-interactive",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "profile-cpu",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "profile-dir",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "profile-goroutine",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "profile-mem",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "strict-control",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "strict-mode",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "working-dir",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "help",
+          "short": "-h",
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "version",
+          "short": "-v",
+          "takes_value": false,
+          "value_hint": null
+        }
+      ],
+      "help_sha256": "10a46463096f235c9708777571acdf782e7a1a49889dc7f947d205124d6aa760"
+    },
+    {
+      "path": [
+        "stack",
+        "run"
+      ],
+      "aliases": [],
+      "category": "Commands",
+      "kind": "terragrunt",
+      "summary": "Run a command on the stack generated from the current directory",
+      "flags": [
+        {
+          "name": "auth-provider-cmd",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "backend-bootstrap",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "backend-require-bootstrap",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "cas-clone-depth",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "cas-offline",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "cas-probe-ttl",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "cas-refresh",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "config",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "dependency-fetch-output-from-state",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "destroy-dependencies-check",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "disable-bucket-update",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "discovery-boundary",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "download-dir",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "fail-fast",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "feature",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "filter",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "filter-affected",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "filter-allow-destroy",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "filters-file",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "graph-root",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "iam-assume-role",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "iam-assume-role-duration",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "iam-assume-role-session-name",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "iam-assume-role-web-identity-token",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "inputs-debug",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "json-out-dir",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "no-auto-approve",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "no-auto-init",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "no-auto-provider-cache-dir",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "no-auto-retry",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "no-cas",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "no-dependency-outputs",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "no-discovery-auth-provider-cmd",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "no-filters-file",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "no-hooks",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "no-stack-generate",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "out-dir",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "parallelism",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "provider-cache",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "provider-cache-dir",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "provider-cache-hostname",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "provider-cache-port",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "provider-cache-registry-names",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "provider-cache-token",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "queue-ignore-dag-order",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "queue-ignore-errors",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "report-file",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "report-format",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "report-schema-file",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "source",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "source-map",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "source-update",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "summary-disable",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "summary-per-unit",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "tf-forward-stdout",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "tf-path",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "use-partial-parse-config-cache",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "version-manager-file-name",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "experiment",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "experiment-mode",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "log-custom-format",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "log-disable",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "log-format",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "log-level",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "log-show-abs-paths",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "no-color",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "no-tip",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "no-tips",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "non-interactive",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "profile-cpu",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "profile-dir",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "profile-goroutine",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "profile-mem",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "strict-control",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "strict-mode",
+          "short": null,
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "working-dir",
+          "short": null,
+          "takes_value": true,
+          "value_hint": "value"
+        },
+        {
+          "name": "help",
+          "short": "-h",
+          "takes_value": false,
+          "value_hint": null
+        },
+        {
+          "name": "version",
+          "short": "-v",
+          "takes_value": false,
+          "value_hint": null
+        }
+      ],
+      "help_sha256": "097e12c3a4d66fa9b5ef169efb4d617aaf7e20dd86d54b8099eaa91ba24a5955"
+    }
+  ]
+}
