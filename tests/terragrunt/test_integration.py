@@ -94,7 +94,7 @@ def _require_capability(client: TerragruntClient, command: str) -> None:
 
 
 def _cli_redesign_args(client: TerragruntClient) -> tuple[str, ...]:
-    if Version("0.77.0") <= client.version < Version("0.78.0"):
+    if Version("0.75.4") <= client.version < Version("0.78.0"):
         return ("--experiment", "cli-redesign")
     return ()
 
@@ -103,7 +103,7 @@ def _cli_redesign_args(client: TerragruntClient) -> tuple[str, ...]:
 def test_terragrunt_render(terragrunt_client: TerragruntClient) -> None:
     _require_capability(terragrunt_client, "render")
 
-    result = terragrunt_client.render(*_cli_redesign_args(terragrunt_client), "--format", "hcl")
+    result = terragrunt_client.render(*_cli_redesign_args(terragrunt_client), "--json")
 
     assert result.succeeded
     assert "terraform" in result.stdout
