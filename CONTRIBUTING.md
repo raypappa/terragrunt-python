@@ -24,6 +24,11 @@ Terraform is installed locally:
 uv run pytest -m integration
 ```
 
+GitHub Actions also runs the Terragrunt integration tests once for every
+version represented by a committed CLI fixture. The versioned workflow uses
+`mise` to install the exact binary and derives its matrix from
+`tests/fixtures/terragrunt-cli/`.
+
 Integration tests skip missing or unrunnable executables. They use temporary
 configurations, disable backend access, and do not create or modify
 infrastructure.

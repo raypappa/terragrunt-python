@@ -1,0 +1,73 @@
+name: Terragrunt Versioned Integration
+
+on:
+  push:
+    paths:
+      - ".github/workflows/terragrunt-versioned-integration.yml"
+      - "src/**"
+      - "tests/fixtures/terragrunt-cli/**"
+      - "tests/terragrunt/test_integration.py"
+      - "pyproject.toml"
+      - "uv.lock"
+  pull_request:
+    paths:
+      - ".github/workflows/terragrunt-versioned-integration.yml"
+      - "src/**"
+      - "tests/fixtures/terragrunt-cli/**"
+      - "tests/terragrunt/test_integration.py"
+      - "pyproject.toml"
+      - "uv.lock"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  versions:
+    name: Discover supported versions
+    runs-on: ubuntu-latest
+    outputs:
+      versions: ${{ steps.fixtures.outputs.versions }}
+    steps:
+      - uses: actions/checkout@v4
+      - id: fixtures
+        name: Build version matrix from fixtures
+        shell: bash
+        run: |
+          versions=$(python - <<'PY'
+          import json
+          from pathlib import Path
+
+          versions = sorted(
+              path.stem.removeprefix("v")
+              for path in Path("tests/fixtures/terragrunt-cli").glob("v*.json")
+          )
+          print(json.dumps(versions))
+          PY
+          )
+          echo "versions=$versions" >> "$GITHUB_OUTPUT"
+
+  integration:
+    name: Terragrunt ${{ matrix.version }}
+    needs: versions
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        version: ${{ fromJSON(needs.versions.outputs.versions) }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+        with:
+          enable-cache: true
+      - uses: jdx/mise-action@v2
+        with:
+          version: 2025.9.13
+      - name: Install Python dependencies
+        run: uv sync --locked
+      - name: Install OpenTofu
+        run: mise install opentofu@1.9.0
+      - name: Run Terragrunt integration tests
+        env:
+          TERRAGRUNT_EXPECTED_VERSION: ${{ matrix.version }}
+        run: mise exec opentofu@1.9.0 -- mise exec terragrunt@${{ matrix.version }} -- uv run pytest tests/terragrunt/test_integration.py -m integration

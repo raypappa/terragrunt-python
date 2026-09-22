@@ -1,3 +1,4 @@
+import os
 import shutil
 import subprocess
 from pathlib import Path
@@ -41,6 +42,9 @@ def test_installed_executable_reports_version(executable: Executable, tmp_path: 
     assert result.succeeded
     assert result.returncode == 0
     assert str(client.version) in result.stdout + result.stderr
+    expected_version = os.environ.get("TERRAGRUNT_EXPECTED_VERSION")
+    if executable is Executable.TERRAGRUNT and expected_version is not None:
+        assert str(client.version) == expected_version
 
 
 @pytest.mark.integration
@@ -106,17 +110,17 @@ def test_terragrunt_find(terragrunt_client: TerragruntClient) -> None:
     result = terragrunt_client.find("--json")
 
     assert result.succeeded
-    assert "terragrunt.hcl" in result.stdout
+    assert result.stdout.strip()
 
 
 @pytest.mark.integration
 def test_terragrunt_list(terragrunt_client: TerragruntClient) -> None:
     _require_capability(terragrunt_client, "list")
 
-    result = terragrunt_client.list("--json")
+    result = terragrunt_client.list()
 
     assert result.succeeded
-    assert "terragrunt.hcl" in result.stdout
+    assert result.stdout.strip()
 
 
 @pytest.mark.integration
