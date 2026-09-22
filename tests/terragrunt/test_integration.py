@@ -139,6 +139,13 @@ def test_terragrunt_dag_graph(terragrunt_client: TerragruntClient) -> None:
 
 
 @pytest.mark.integration
+def test_terragrunt_stack_clean(terragrunt_client: TerragruntClient) -> None:
+    result = terragrunt_client.stack_clean("--experiment", "stacks")
+
+    assert result.succeeded
+
+
+@pytest.mark.integration
 def test_terragrunt_exec_command(terragrunt_client: TerragruntClient) -> None:
     if terragrunt_client.version < Version("0.80.0"):
         pytest.skip("exec command is not covered before Terragrunt 0.80.0")
